@@ -14,5 +14,6 @@ PREFIX:  process.env.PREFIX || ['.'] ,
 FOOTER: '> BOT CREATED BY SHADOW MOVIE X KILAR',
 DIRECTION: true,
 IMAGE: process.env.IMAGE || `https://i.ibb.co/4rKv8p3/9046.jpg`,
-LOGO: process.env.LOGO || `https://i.ibb.co/4rKv8p3/9046.jpg`     
+LOGO: process.env.LOGO || `https://i.ibb.co/4rKv8p3/9046.jpg`,
+MODE: process.env.MODE || `button`
 };
