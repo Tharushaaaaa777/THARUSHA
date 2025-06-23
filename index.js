@@ -77,7 +77,7 @@ const ownerNumber = '94704031866'
 //===================SESSION============================
 if (!fs.existsSync(__dirname + '/lib/creds.json')) {
     if (config.SESSION_ID) {
-      const sessdata = config.SESSION_ID.replace("VAJIRA-MD=", "")
+      const sessdata = config.SESSION_ID.replace("SHONU-X-MD=", "")
       const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
       filer.download((err, data) => {
         if (err) throw err
@@ -137,14 +137,14 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
                     require("./plugins/" + plugin);
                 }
             });
-            console.log('Plugins installed ✅')
-            console.log('Movie connected ✅')
+            console.log('Plugins installed done ✅')
+            console.log('SHONU X SYSTEM connected ✅')
 await conn.sendMessage(config.OWNER_NUMBER + "@s.whatsapp.net", {
-text: "*🎬 TC TEAM MOVIE-DL successfully connected* ✓\n\n\n> ◦ *Official GitHub* - ```https://github.com/VajiraTech```\n> ◦ ᴊᴏɪɴ ᴏᴜʀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ᴠɪᴀ ᴛʏᴘᴇ: .joinsup\n*🎬 TC TEA MOVIE-DL ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ*\n*ᴄʀᴇᴀᴛᴇᴅ ʙʏ • ᴛᴄ ᴛᴇᴀᴍ*",
+text: "*🔥 SHONU X MD  successfully connected* ✓\n\n\n> ◦ *Official GitHub* - ```https://github.com/shawteach```\n> ꜱʜᴀᴅᴏᴡ ᴍᴏᴠɪᴇ x ᴋɪʟᴀʀ ɴᴇᴡ ᴘʀᴏᴅᴜᴄᴛɪᴏɴꜱ: .joinsup\n*🔥 SHONU x MD Data Base successful🔥*\n*🔥𝗡𝗘𝗪 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 𝗡𝗘𝗫𝗧 𝗨𝗣𝗗𝗔𝗧𝗘🔥*",
 contextInfo: {
 externalAdReply: {
-title: "🎬 TC TEAM MOVIE-DL 🎬\nSuccessfully Connected !",	
-thumbnailUrl: 'https://telegra.ph/file/f668453bb3afb56193dad-7ba3fe37003843095f.jpg',
+title: "🔥 SHONU x MD  🔥\nSuccessfully Connected !",	
+thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg',
 sourceUrl: "",
 mediaType: 1,
 renderLargerThumbnail: true
@@ -190,7 +190,119 @@ conn.forwardMessage = async (jid, message, forceForward = false, options = {}) =
              }
         
       
-//
+//==================================================================
+
+  //farewell/welcome
+    conn.ev.on('group-participants.update', async (anu) => {
+    	
+console.log(anu)
+try {
+let metadata = await conn.groupMetadata(anu.id)
+let participants = anu.participants
+for (let num of participants) {
+try {
+ppuser = await conn.profilePictureUrl(num, 'image')
+} catch (err) {
+ppuser = 'https://i.ibb.co/HpCN8RtR/7946.jpg'
+}
+try {
+ppgroup = await conn.profilePictureUrl(anu.id, 'image')
+} catch (e) {
+ppgroup = 'https://i.ibb.co/HpCN8RtR/7946.jpg'
+}
+//welcome\\
+memb = metadata.participants.length
+connWlcm = await getBuffer(ppuser)
+connLft = await getBuffer(ppuser)
+                if (anu.action == 'add') {
+                const connbuffer = await getBuffer(ppuser)
+                let connName = num
+                const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
+	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+	            const xmembers = metadata.participants.length
+                connbody = `───🔥 ＷＥＬＣＯＭＥ ＴＯ ＧＲＯＵＰ🔥────
+╭────────●●►
+│「 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 👋 「 @${connName.split("@")[0]}  」
+╰────────────────────●
+│✑ ${metadata.subject}
+│✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+│✑  ${connmembers}th
+│✑  𝗧𝗶𝗺𝗲 : 
+│✑  ${conntime} ${conndate}
+╰────────────────────●
+ＳＨＯＮＵ Ｘ ＭＤ ＷＥＬＣＯＭＥ ＭＳＧ 💥
+
+*📄 DESCRIPTION 📄*
+
+💥 අපගේ සමුහයට එක් වූ ඔබව සාදරෙන් පිලිගන්නවා❤️
+
+${config.FOOTER}
+   `
+conn.sendMessage(anu.id,
+ { text: connbody,
+ contextInfo:{
+mentionedJid:[num],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": ` 👨‍💻 ＳＨＯＮＵ Ｘ ＭＤ 👨‍💻`, 
+"body": `${metadata.subject}`,	
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": connLft,
+"sourceUrl": `${ppuser}`
+}
+}
+})
+                } else if (anu.action == 'remove') {
+                	const connbuffer = await getBuffer(ppuser)
+                    const conntime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
+	                const conndate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                	let connName = num
+                    const connmembers = metadata.participants.length
+                    connbody = `───🔥 ＧＯＯＤＢＹＥ ＦＲＯＭ ＧＲＯＵＰ 🔥────
+╭────────●●►
+│「 𝗚𝗢𝗢𝗗𝗕𝗬𝗘 👋 「 @${connName.split("@")[0]}  」
+╰────────────────────●
+│✑ ${metadata.subject}
+│✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+│✑  ${connmembers}th
+│✑  𝗧𝗶𝗺𝗲 : 
+│✑  ${conntime} ${conndate}
+╰────────────────────●
+ＳＨＯＮＵ Ｘ ＭＤ ＧＯＯＤ ＢＹＥ ＭＳＧ 💥
+
+*📄 DESCRIPTION 📄*
+
+💥 අපගේ සමුහයෙන් ගිය ඔබව අපි මතක් කරන්නම් 🤍
+
+
+${config.FOOTER}
+			    `
+conn.sendMessage(anu.id,
+ { text: connbody,
+ contextInfo:{
+mentionedJid:[num],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": ` 👨‍💻 ＳＨＯＮＵ Ｘ ＭＤ 👨‍💻`, 
+"body": `${metadata.subject}`,	
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": connLft,
+"sourceUrl": `${ppuser}`
+}
+}
+})
+}				  
+}
+} catch (e) {
+console.log(e)
+}
+})      
+                  	
+
 
 	
 //==================================================================	
@@ -313,15 +425,15 @@ contextInfo: {
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363182681793169@newsletter',
+      newsletterJid: '120363401474002174@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'MINUKI-MD-MOVIE-DL',
-body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
+title: 'SHONU x MD',
+body: 'ℓαкѕнαη ∂αмαуαηтнα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94711453361" ,
-thumbnailUrl: 'https://telegra.ph/file/f668453bb3afb56193dad-7ba3fe37003843095f.jpg' ,
+sourceUrl: "https://wa.me/94704031866" ,
+thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -350,15 +462,15 @@ const textmsg = await conn.sendMessage(from, { text: buttonMessage ,
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363182681793169@newsletter',
+      newsletterJid: '120363401474002174@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'TDD-MO𝙫IE-DL',
-body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
+title: 'SHONU x MD',
+body: 'ℓαкѕнαη ∂αмαуαηтнα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94711453361" ,
-thumbnailUrl: 'https://telegra.ph/file/f668453bb3afb56193dad-7ba3fe37003843095f.jpg' ,
+sourceUrl: "https://wa.me/94704031866" ,
+thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -373,15 +485,15 @@ contextInfo: {
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363182681793169@newsletter',
+      newsletterJid: '120363401474002174@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'TDD-MOVIE-DL',
-body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
+title: 'SHONU x MD',
+body: 'ℓαкѕнαη ∂αмαуαηтнα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94711453361" ,
-thumbnailUrl: 'https://telegra.ph/file/f668453bb3afb56193dad-7ba3fe37003843095f.jpg' ,
+sourceUrl: "https://wa.me/94704031866" ,
+thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -448,15 +560,15 @@ const textmsg = await conn.sendMessage(from, { text: buttonMessage ,contextInfo:
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363182681793169@newsletter',
+      newsletterJid: '120363401474002174@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'TDD-MOVIE-DL',
-body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
+title: 'SHONU x md',
+body: 'ℓαкѕнαη ∂αмαуαηтнα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94711453361" ,
-thumbnailUrl: 'https://telegra.ph/file/f668453bb3afb56193dad-7ba3fe37003843095f.jpg' ,
+sourceUrl: "https://wa.me/94704031866" ,
+thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -470,15 +582,15 @@ const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: butt
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363182681793169@newsletter',
+      newsletterJid: '120363401474002174@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'TDD-MOVIE-DL',
-body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
+title: 'SHONU x MD',
+body: 'ℓαкωнαη ∂αмαуαηтнα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94711453361" ,
-thumbnailUrl: 'https://telegra.ph/file/f668453bb3afb56193dad-7ba3fe37003843095f.jpg' ,
+sourceUrl: "https://wa.me/94704031866" ,
+thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -519,15 +631,15 @@ contextInfo: {
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363182681793169@newsletter',
+      newsletterJid: '120363401474002174@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'TDD-MOVIE-DL',
-body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
+title: 'SHONU x MD',
+body: 'ℓαкѕнαη ∂αмαуαηтнα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94711453361" ,
-thumbnailUrl: 'https://telegra.ph/file/f668453bb3afb56193dad-7ba3fe37003843095f.jpg' ,
+sourceUrl: "https://wa.me/94704031866" ,
+thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -566,15 +678,15 @@ contextInfo: {
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363182681793169@newsletter',
+      newsletterJid: '120363401474002174@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'TDD-MOVIE-DL',
-body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
+title: 'SHONU x MD',
+body: 'ℓαкѕнαη ∂αмαуαηтнα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94711453361" ,
-thumbnailUrl: 'https://telegra.ph/file/f668453bb3afb56193dad-7ba3fe37003843095f.jpg' ,
+sourceUrl: "https://wa.me/94704031866" ,
+thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -597,13 +709,165 @@ editedMessage: {
 }	    
 
 
-	const ownerdata = (await axios.get('https://gist.github.com/Lakshanteach/4097b7c56cd7b2fb18de8fd5f3e3d306.js')).data
-            config.API = ownerdata.api
-            config.APIKEY = ownerdata.apikey
+	
+
+//==================================Button================================
             
 	      
+            const ownerdata = (await axios.get('https://gist.github.com/Lakshanteach/4097b7c56cd7b2fb18de8fd5f3e3d306.js')).data
+            config.LOGO = `https://i.ibb.co/HpCN8RtR/7946.jpg`
+            config.FOOTER = `> ꜱʜᴏɴᴜ x ᴍᴅ ʙʏ ʟᴀᴋꜱʜᴀɴ ᴅᴀᴍᴀʏᴀɴᴛʜᴀ`
+            config.NEWS = ownerdata.news
+            config.API = ownerdata.api
+            config.APIKEY = ownerdata.apikey
+	      
+            conn.edit = async (mek, newmg) => {
+                await conn.relayMessage(from, {
+                    protocolMessage: {
+                        key: mek.key,
+                        type: 14,
+                        editedMessage: {
+                            conversation: newmg
+                        }
+                    }
+                }, {})
+            }
+     
+conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
+                let mime = '';
+                let res = await axios.head(url)
+                mime = res.headers['content-type']
+                if (mime.split("/")[1] === "gif") {
+                    return conn.sendMessage(jid, {
+                        video: await getBuffer(url),
+                        caption: caption,
+                        gifPlayback: true,
+                        ...options
+                    }, {
+                        quoted: quoted,
+                        ...options
+                    })
+                }
+                let type = mime.split("/")[0] + "Message"
+                if (mime === "application/pdf") {
+                    return conn.sendMessage(jid, {
+                        document: await getBuffer(url),
+                        mimetype: 'application/pdf',
+                        caption: caption,
+                        ...options
+                    }, {
+                        quoted: quoted,
+                        ...options
+                    })
+                }
+                if (mime.split("/")[0] === "image") {
+                    return conn.sendMessage(jid, {
+                        image: await getBuffer(url),
+                        caption: caption,
+                        ...options
+                    }, {
+                        quoted: quoted,
+                        ...options
+                    })
+                }
+                if (mime.split("/")[0] === "video") {
+                    return conn.sendMessage(jid, {
+                        video: await getBuffer(url),
+                        caption: caption,
+                        mimetype: 'video/mp4',
+                        ...options
+                    }, {
+                        quoted: quoted,
+                        ...options
+                    })
+                }
+                if (mime.split("/")[0] === "audio") {
+                    return conn.sendMessage(jid, {
+                        audio: await getBuffer(url),
+                        caption: caption,
+                        mimetype: 'audio/mpeg',
+                        ...options
+                    }, {
+                        quoted: quoted,
+                        ...options
+                    })
+                }
+            }
+            conn.sendButtonMessage = async (jid, buttons, quoted, opts = {}) => {
+
+                let header;
+                if (opts?.video) {
+                    var video = await prepareWAMessageMedia({
+                        video: {
+                            url: opts && opts.video ? opts.video : ''
+                        }
+                    }, {
+                        upload: conn.waUploadToServer
+                    })
+                    header = {
+                        title: opts && opts.header ? opts.header : '',
+                        hasMediaAttachment: true,
+                        videoMessage: video.videoMessage,
+                    }
+
+                } else if (opts?.image) {
+                    var image = await prepareWAMessageMedia({
+                        image: {
+                            url: opts && opts.image ? opts.image : ''
+                        }
+                    }, {
+                        upload: conn.waUploadToServer
+                    })
+                    header = {
+                        title: opts && opts.header ? opts.header : '',
+                        hasMediaAttachment: true,
+                        imageMessage: image.imageMessage,
+                    }
+
+                } else {
+                    header = {
+                        title: opts && opts.header ? opts.header : '',
+                        hasMediaAttachment: false,
+                    }
+                }
 
 
+                let message = generateWAMessageFromContent(jid, {
+                    viewOnceMessage: {
+                        message: {
+                            messageContextInfo: {
+                                deviceListMetadata: {},
+                                deviceListMetadataVersion: 2,
+                            },
+                            interactiveMessage: {
+                                body: {
+                                    text: opts && opts.body ? opts.body : ''
+                                },
+                                footer: {
+                                    text: opts && opts.footer ? opts.footer : ''
+                                },
+                                header: header,
+                                nativeFlowMessage: {
+                                    buttons: buttons,
+                                    messageParamsJson: ''
+                                }
+                            }
+                        }
+                    }
+                }, {
+                    quoted: quoted
+                })
+                await conn.sendPresenceUpdate('composing', jid)
+                await sleep(1000 * 1);
+                return await conn.relayMessage(jid, message["message"], {
+                    messageId: message.key.id
+                })
+            }
+
+
+	      
+if (!isMe && !isOwner && !isGroup && config.ONLY_GROUP == 'true') return 
+if (!isMe && !isOwner && config.ONLY_ME == 'true') return 
 
 	      
       
@@ -642,7 +906,322 @@ events.commands.map(async (command) => {
 
 
 
+//===================settings==============================================
+let icmd = body ? prefixRegex.test(body[0]) : "false";
+		 if (config.READ_CMD_ONLY === "true" && icmd) {
+                    await conn.readMessages([mek.key])
+		 }
+		
+if (config.AUTO_READ === 'true') {
+        conn.readMessages([mek.key])
+        }
+	    
+if (config.AUTO_TYPING === 'true') {
+	conn.sendPresenceUpdate('composing', from)		
+	}
 
+if (config.AUTO_RECORDING === 'true') {
+
+        conn.sendPresenceUpdate('recording', from)
+
+        }    
+
+if (config.AUTO_BIO === 'true') {
+        conn.updateProfileStatus(`Hey, future leaders! 💎 SHONU X MD is here to inspire and lead, thanks to Technicall dark devils, Inc. 🚀 ${runtime(process.uptime())} `).catch(_ => _)
+        }	
+
+if (config.ALWAYS_ONLINE === 'false') {
+                await conn.sendPresenceUpdate('unavailable')
+		}
+
+if (config.ALWAYS_ONLINE === 'true') {
+                await conn.sendPresenceUpdate('available')
+		}	    
+	    
+if (config.AUTO_BLOCK == 'true' && m.chat.endsWith("@s.whatsapp.net")) {
+            return conn.updateBlockStatus(m.sender, 'block')
+        }
+	
+//==================================================================
+	   
+if (config.ANTI_LINK == "true"){
+if (isAnti && isBotAdmins) {
+  if(!isAdmins){
+  if(!isMe){
+if (body.match(`https`)) {
+    await conn.sendMessage(from, { delete: mek.key })	  	  
+  reply('*「 ⚠️ 𝑳𝑰𝑵𝑲 𝑫𝑬𝑳𝑬𝑻𝑬𝑫 𝘉𝘠 𝘚𝘏𝘖𝘕𝘜 ⚠️ 」*')
+}
+}
+}
+}
+}
+//==================================================================
+const bad = await fetchJson(`https://raw.githubusercontent.com/chamiofficial/server-/main/badby_alpha.json`)
+if (config.ANTI_BAD == "true"){
+  if (!isAdmins && !isDev) {
+  for (any in bad){
+  if (body.toLowerCase().includes(bad[any])){  
+    if (!body.includes('tent')) {
+      if (!body.includes('docu')) {
+        if (!body.includes('https')) {
+  if (groupAdmins.includes(sender)) return 
+  if (mek.key.fromMe) return   
+  await conn.sendMessage(from, { delete: mek.key })  
+  await conn.sendMessage(from , { text: '*Bad word detected..!*'})
+  await conn.groupParticipantsUpdate(from,[sender], 'remove')
+  }}}}}}}
+   
+//==================================================================
+if(!isOwner) {	//!isOwner) {	
+    if(config.ANTI_DELETE === "true" ) {
+        
+    if (!m.id.startsWith("BAE5")) {
+    
+    // Ensure the base directory exists
+    const baseDir = 'message_data';
+    if (!fs.existsSync(baseDir)) {
+      fs.mkdirSync(baseDir);
+    }
+    
+    function loadChatData(remoteJid, messageId) {
+      const chatFilePath = path.join(baseDir, remoteJid, `${messageId}.json`);
+      try {
+        const data = fs.readFileSync(chatFilePath, 'utf8');
+        return JSON.parse(data) || [];
+      } catch (error) {
+        return [];
+      }
+    }
+    
+    function saveChatData(remoteJid, messageId, chatData) {
+      const chatDir = path.join(baseDir, remoteJid);
+    
+      if (!fs.existsSync(chatDir)) {
+        fs.mkdirSync(chatDir, { recursive: true });
+      }
+    
+      const chatFilePath = path.join(chatDir, `${messageId}.json`);
+    
+      try {
+        fs.writeFileSync(chatFilePath, JSON.stringify(chatData, null, 2));
+       // console.log('Chat data saved successfully.');
+      } catch (error) {
+        console.error('Error saving chat data:', error);
+      }
+    }
+        
+    function handleIncomingMessage(message) {
+      const remoteJid = from //message.key.remoteJid;
+      const messageId = message.key.id;
+    
+      const chatData = loadChatData(remoteJid, messageId);
+    
+      chatData.push(message);
+    
+      saveChatData(remoteJid, messageId, chatData);
+    
+    //  console.log('Message received and saved:', messageId);
+    }
+    
+    const delfrom = config.DELETEMSGSENDTO !=='' ? config.DELETEMSGSENDTO + 'chat.whatsapp.com': from
+    function handleMessageRevocation(revocationMessage) {
+    //const remoteJid = revocationMessage.message.protocolMessage.key.remoteJid;
+     //const messageId = revocationMessage.message.protocolMessage.key.id;
+    const remoteJid = from // revocationMessage.msg.key.remoteJid;
+    const messageId = revocationMessage.msg.key.id;
+    
+        
+     // console.log('Received revocation message with ID:', messageId);
+    
+      const chatData = loadChatData(remoteJid, messageId);
+    
+       const originalMessage = chatData[0]   
+    
+      if (originalMessage) {
+        const deletedBy = revocationMessage.sender.split('@')[0];
+        const sentBynn = originalMessage.key.participant ?? revocationMessage.sender;
+    const sentBy = sentBynn.split('@')[0];
+          if ( deletedBy.includes(botNumber) || sentBy.includes(botNumber) ) return;
+     if(originalMessage.message && originalMessage.message.conversation && originalMessage.message.conversation !== ''){
+         const messageText = originalMessage.message.conversation;
+    if (isGroup && messageText.includes('chat.whatsapp.com')) return;
+         var xx = '```'
+     conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n\n> 🔓 Message Text: ${xx}${messageText}${xx}` });
+    //........................................//........................................
+    }else if(originalMessage.msg.type ==='MESSAGE_EDIT'){
+     conn.sendMessage(delfrom, { text: `❌ *edited message detected* ${originalMessage.message.editedMessage.message.protocolMessage.editedMessage.conversation}` },{quoted: mek});
+     
+    //........................................//........................................
+    } else if(originalMessage.message && originalMessage.message.exetendedTextMessage && originalMessage.msg.text ){ //&& originalMessage.message.exetendedTextMessage.text && originalMessage.message.exetendedTextMessage.text !== ''){
+        const messageText = originalMessage.msg.text;
+    if (isGroup && messageText.includes('chat.whatsapp.com')) return;
+    
+     var xx = '```'
+     conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n\n> 🔓 Message Text: ${xx}${messageText}${xx}` });
+    } else if(originalMessage.message && originalMessage.message.exetendedTextMessage ){ //&& originalMessage.message.exetendedTextMessage.text && originalMessage.message.exetendedTextMessage.text !== ''){
+        const messagetext = originalMessage.message.extendedTextMessage.text;
+    if (isGroup && messageText.includes('chat.whatsapp.com')) return;
+     var xx = '```'
+     conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n\n> 🔓 Message Text: ${xx}${originalMessage.body}${xx}` });
+    }else if(originalMessage.type === 'extendedTextMessage') {
+    async function quotedMessageRetrive(){     
+    var nameJpg = getRandom('');
+    const ml = sms(conn, originalMessage)
+                
+    if(originalMessage.message.extendedTextMessage){
+    const messagetext = originalMessage.message.extendedTextMessage.text;
+    if (isGroup && messageText.includes('chat.whatsapp.com')) return;
+        var xx = '```'
+     conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n\n> 🔓 Message Text: ${xx}${originalMessage.message.extendedTextMessage.text}${xx}` });
+    }else{
+    const messagetext = originalMessage.message.extendedTextMessage.text;
+    if (isGroup && messageText.includes('chat.whatsapp.com')) return;
+        conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n\n> 🔓 Message Text: ${xx}${originalMessage.message.extendedTextMessage.text}${xx}` });
+    }
+    }
+    
+    quotedMessageRetrive()
+           
+    }else if(originalMessage.type === 'imageMessage') {
+          async function imageMessageRetrive(){      var nameJpg = getRandom('');
+    const ml = sms(conn, originalMessage)
+                let buff =  await ml.download(nameJpg)
+                let fileType = require('file-type');
+                let type = fileType.fromBuffer(buff);
+                await fs.promises.writeFile("./" + type.ext, buff);
+    if(originalMessage.message.imageMessage.caption){
+    const messageText = originalMessage.message.imageMessage.caption;
+    if (isGroup && messageText.includes('chat.whatsapp.com')) return;
+    
+        await conn.sendMessage(delfrom, { image: fs.readFileSync("./" + type.ext), caption: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n\n> 🔓 Message Text: ${originalMessage.message.imageMessage.caption}` })
+    }else{
+        await conn.sendMessage(delfrom, { image: fs.readFileSync("./" + type.ext), caption: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_` })
+    }       
+        }
+    imageMessageRetrive()
+     
+    }else if(originalMessage.type === 'videoMessage') {
+          async function videoMessageRetrive(){      var nameJpg = getRandom('');
+    const ml = sms(conn, originalMessage)
+    
+    const vData = originalMessage.message.videoMessage.fileLength
+    const vTime = originalMessage.message.videoMessage.seconds;
+    const fileDataMB = config.MAX_SIZE
+    const fileLengthBytes = vData
+    const fileLengthMB = fileLengthBytes / (1024 * 1024);
+    const fileseconds = vTime
+    if(originalMessage.message.videoMessage.caption){
+    if (fileLengthMB < fileDataMB && fileseconds < 30*60 ) {
+                let buff =  await ml.download(nameJpg)
+                let fileType = require('file-type');
+                let type = fileType.fromBuffer(buff);
+                await fs.promises.writeFile("./" + type.ext, buff);
+    const messageText = originalMessage.message.videoMessage.caption;
+    if (isGroup && messageText.includes('chat.whatsapp.com')) return;
+    
+        await conn.sendMessage(delfrom, { video: fs.readFileSync("./" + type.ext), caption: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n\n> 🔓 Message Text: ${originalMessage.message.videoMessage.caption}` })
+           }
+    }else{
+                let buff =  await ml.download(nameJpg)
+                let fileType = require('file-type');
+                let type = fileType.fromBuffer(buff);
+                await fs.promises.writeFile("./" + type.ext, buff);
+        const vData = originalMessage.message.videoMessage.fileLength
+    const vTime = originalMessage.message.videoMessage.seconds;
+    const fileDataMB = config.MAX_SIZE
+    const fileLengthBytes = vData
+    const fileLengthMB = fileLengthBytes / (1024 * 1024);
+    const fileseconds = vTime
+    if (fileLengthMB < fileDataMB && fileseconds < 30*60 ) {
+        await conn.sendMessage(delfrom, { video: fs.readFileSync("./" + type.ext), caption: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_` })
+    }
+    }       
+    }
+    videoMessageRetrive()
+    }else if(originalMessage.type === 'documentMessage') {
+          async function documentMessageRetrive(){      var nameJpg = getRandom('');
+    const ml = sms(conn, originalMessage)
+                let buff =  await ml.download(nameJpg)
+                let fileType = require('file-type');
+                let type = fileType.fromBuffer(buff);
+                await fs.promises.writeFile("./" + type.ext, buff);
+    
+        
+    
+    if(originalMessage.message.documentWithCaptionMessage){
+    
+    await conn.sendMessage(delfrom, { document: fs.readFileSync("./" + type.ext), mimetype: originalMessage.message.documentMessage.mimetype, fileName: originalMessage.message.documentMessage.fileName, caption: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n`});
+     
+    }else{
+    
+    await conn.sendMessage(delfrom, { document: fs.readFileSync("./" + type.ext), mimetype: originalMessage.message.documentMessage.mimetype, fileName: originalMessage.message.documentMessage.fileName, caption: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n`});
+    
+    }
+     }
+    
+    documentMessageRetrive()
+    }else if(originalMessage.type === 'audioMessage') {
+          async function audioMessageRetrive(){      var nameJpg = getRandom('');
+    const ml = sms(conn, originalMessage)
+                let buff =  await ml.download(nameJpg)
+                let fileType = require('file-type');
+                let type = fileType.fromBuffer(buff);
+                await fs.promises.writeFile("./" + type.ext, buff);
+    if(originalMessage.message.audioMessage){
+    const audioq = await conn.sendMessage(delfrom, { audio: fs.readFileSync("./" + type.ext), mimetype:  originalMessage.message.audioMessage.mimetype, fileName:  `${m.id}.mp3` })	
+    return await conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n` },{quoted: audioq});
+    
+    }else{
+    if(originalMessage.message.audioMessage.ptt === "true"){
+    
+    const pttt = await conn.sendMessage(delfrom, { audio: fs.readFileSync("./" + type.ext), mimetype:  originalMessage.message.audioMessage.mimetype, ptt: 'true',fileName: `${m.id}.mp3` })	
+    return await conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n` },{quoted: pttt});
+    
+     }
+      }
+     }
+    
+    audioMessageRetrive()
+    }else if(originalMessage.type === 'stickerMessage') {
+          async function stickerMessageRetrive(){      var nameJpg = getRandom('');
+    const ml = sms(conn, originalMessage)
+                let buff =  await ml.download(nameJpg)
+                let fileType = require('file-type');
+                let type = fileType.fromBuffer(buff);
+                await fs.promises.writeFile("./" + type.ext, buff);
+    if(originalMessage.message.stickerMessage){
+     
+    //await conn.sendMessage(from, { audio: fs.readFileSync("./" + type.ext), mimetype:  originalMessage.message.audioMessage.mimetype, fileName:  `${m.id}.mp3` })	
+     const sdata = await conn.sendMessage(delfrom,{sticker: fs.readFileSync("./" + type.ext) ,package: 'DEWMINI-MD 🌟'})
+    return await conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n` },{quoted: sdata});
+    
+    }else{
+    
+    const stdata = await conn.sendMessage(delfrom,{sticker: fs.readFileSync("./" + type.ext) ,package: 'DEWMINI-MD 🌟'})
+    return await conn.sendMessage(delfrom, { text: `🚫 *This message was deleted !!*\n\n  🚮 *Deleted by:* _${deletedBy}_\n  📩 *Sent by:* _${sentBy}_\n` },{quoted: stdata});
+    
+      }
+     }
+    
+    stickerMessageRetrive()
+             }
+         
+      } else {
+        console.log('Original message not found for revocation.');
+      }
+    }
+//    if(!isGroup){
+    if (mek.msg && mek.msg.type === 0) {
+      handleMessageRevocation(mek);
+    } else {//if(mek.message && mek.message.conversation && mek.message.conversation !== ''){
+      handleIncomingMessage(mek);
+    
+   //     }
+    }
+    }
+    }	
+    }
 
       
 //==================================================================	
@@ -675,9 +1254,9 @@ events.commands.map(async (command) => {
 }
 
 app.get("/", (req, res) => {
-res.send("📟 movie Working successfully!");
+res.send("🇯🇵 SHONU x MD  Working successfully!");
 });
-app.listen(port, () => console.log(`movie Server listening on port http://localhost:${port}`));
+app.listen(port, () => console.log(`Shonu Server listening on port http://localhost:${port}`));
 
 setTimeout(() => {
 connectToWA()
