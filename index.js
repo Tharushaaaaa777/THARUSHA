@@ -880,7 +880,7 @@ if (isCmd) {
     if (cmd.react) conn.sendMessage(from, { react: { text: cmd.react, key: mek.key } })
 
     try {
-cmd.function(conn, mek, m, { from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply ,config, isCreator , isDev, botNumber2 });
+cmd.function(client, store, conn, mek, message, m, { from, query, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply ,config, isCreator , isDev, botNumber2 });
     } catch (e) {
 console.error("[PLUGIN ERROR] ", e);
     }
