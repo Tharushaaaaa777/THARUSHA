@@ -4,7 +4,7 @@ const os = require('os')
 var { get_set , input_set } = require('../lib/set_db') 
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson, jsonformat} = require('../lib/functions')
 const pakaya = "`"
-const prefix = config.PREFIX
+//const prefix = config.PREFIX
 
 cmd({
     pattern: "alive",
