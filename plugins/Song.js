@@ -1,6 +1,7 @@
 const { cmd, commands } = require('../lib/command')
 const config = require('../settings')
 const os = require('os')
+const yts = require('ytsearch-venom');
 var { get_set , input_set } = require('../lib/set_db') 
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson, jsonformat} = require('../lib/functions')
 const pakaya = "`"
@@ -106,5 +107,70 @@ cmd({
     }
 });
 
-
-
+// Command to download MP3 from YouTube URL
+cmd(
+  {
+    pattern: 'ytaa',
+    react: '📥',
+    dontAddCommandList: true,
+    filename: __filename,
+  },
+  async (conn, message, mek, m, match, { from, q, reply }) => {
+    if (!q) {
+      return await reply('*Need a youtube url!*');
+    }
+    try {
+      const data = await fetchJson(`https://yt-five-tau.vercel.app/download?q=${q}&format=mp3`);
+      await conn.sendMessage(from, { react: { text: '⬆️', key: m.key } });
+      await conn.sendMessage(from, { audio: { url: data.result.download }, mimetype: 'audio/mpeg' }, { quoted: mek });
+      await conn.sendMessage(from, { react: { text: '✔️', key: m.key } });
+    } 
+catch (e) {
+        console.error(e);
+        reply(`Error: ${e.message}`);
+  }
+);
+// Command to download MP3 and send as a document with thumbnail
+cmd(
+  {
+    pattern: 'ytad',
+    react: '⬇️',
+    dontAddCommandList: true,
+    filename: __filename,
+  },
+  async (conn, message, match, { from, q, reply }) => {
+    try {
+      if (!q) {
+        return await reply('*Need a youtube url!*');
+      }
+      const url = q.split('&')[0];
+      const thumbnailUrl = q.split('&')[1];
+      const fileName = q.split('&')[2];
+      const thumbnailResponse = await fetch(thumbnailUrl);
+      const thumbnailBuffer = await thumbnailResponse.buffer();
+      const resizedThumbnail = await resizeImage(thumbnailBuffer, 200, 200);
+      const data = await fetchJson(`https://yt-five-tau.vercel.app/download?q=${url}&format=mp3`);
+      await conn.sendMessage(from, {
+        react: { text: '⬆️', key: m.key },
+      });
+      await conn.sendMessage(
+        from,
+        {
+          document: { url: data.result.download },
+          jpegThumbnail: resizedThumbnail,
+          caption: config.FOOTER,
+          mimetype: 'audio/mpeg',
+          fileName: fileName,
+        },
+        { quoted: mek }
+      );
+      await client.sendMessage(from, {
+        react: { text: '✔️', key: m.key },
+      });
+    } 
+    catch (e) {
+        console.error(e);
+        reply(`Error: ${e.message}`);
+  }
+  }
+);
