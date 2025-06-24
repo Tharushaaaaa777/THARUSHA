@@ -7,7 +7,7 @@ const pakaya = "`"
 
 
 cmd({
-    pattern: "menu3",
+    pattern: "menu",
     react: "📂",
     desc: "Check bot Commands.",
     category: "main",
@@ -27,7 +27,7 @@ cmd({
 
 📜 *тнαяυѕнα-м∂ ¢σммαη∂ ℓιѕт*`;
 
-        let imageUrl = "https://i.ibb.co/HpCN8RtR/7946.jpg";
+        let imageUrl = "https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg";
 
         let vpsOptions = [
         
