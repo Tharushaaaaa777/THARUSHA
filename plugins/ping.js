@@ -5,7 +5,7 @@ const config = require('../settings')
 const { cmd, commands } = require('../lib/command')
 
 cmd({
-    pattern: "ping1",
+    pattern: "ping",
     desc: "Check bot's response time.",
     category: "main",
     react: "🚀",
