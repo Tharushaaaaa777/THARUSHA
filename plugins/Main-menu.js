@@ -3,6 +3,7 @@ const config = require('../settings')
 const os = require('os')
 var { get_set , input_set } = require('../lib/set_db') 
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson, jsonformat} = require('../lib/functions')
+const pakaya = "`"
 
 
 cmd({
@@ -14,36 +15,37 @@ cmd({
 }, async (conn, mek, m, { reply, prefix }) => {
     try {
 
-        let teksnya = `
-💭 Hello 🤍 Ｉ ａｍ   𝗦𝗛𝗢𝗡𝗨 𝗫 𝗠𝗗 𝗪𝗔 𝗕𝗢𝗧 ❯❯  💥
-╭────────────────────●●►
-| *🛠️  𝙑𝙀𝙍𝙎𝙄𝙊𝙉:* ${require("../package.json").version}
-| *📡  𝙈𝙀𝙈𝙊𝙍𝙔:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-| *⏱️  𝗥𝗨𝗡𝗧𝗜𝗠𝗘:* ${runtime(process.uptime())}
-╰─────────────────────●●►
- *║  🎥  ❮❮    𝗦𝗛𝗢𝗡𝗨 𝗫 𝗠𝗗   𝗠𝗘𝗡𝗨 ➌  𝗟𝗜𝗦𝗧 ❯❯  🎥  ║*
- 
- 🔥This is the result of our teams hard work and our Kindom of devil team owns the bots rights and code rights. Therefore, you have no chance to change and submit our bot under any circumstances And 100 Commands And logo, thumbnail,banner Maker Commands Ai Chatbot feathers On Our Bot`;
+        let teksnya = `👋 *🅷🅴🅻🅻🅾 𝘣𝘶𝘥𝘥𝘺 𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 ${pakaya}ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ${pakaya} 😗*
+
+*┏━━━━━━━━━━━━━━━━━━━┓*
+*┃ 👾 ${pakaya}ʙᴏᴛ :${pakaya} ᴛʜᴀʀᴜꜱʜᴀ ᴍᴅ* 
+*┃ 👤 ${pakaya}ᴏᴡɴᴇʀ :${pakaya} ᴛʜᴀʀᴜꜱʜᴀ ꜱᴀɴᴅɪᴘᴀ* 
+*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*
+*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*
+*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*
+*┗━━━━━━━━━━━━━━━━━━━┛*
+
+📜 *тнαяυѕнα-м∂ ¢σммαη∂ ℓιѕт*`;
 
         let imageUrl = "https://i.ibb.co/HpCN8RtR/7946.jpg";
 
         let vpsOptions = [
         
-            { title: "ᴅᴏᴡɴʟᴏᴀᴅ menu ☠️", description: "Get Bot Download Menu", id: `${prefix}downloadmenu` },
-            { title: "ᴍᴏᴠɪᴇ ᴍᴇɴᴜ ☠️", description: "Get Bot Movie Menu", id: `${prefix}moviemenu` },
-            { title: "ᴄᴏɴᴠᴇʀᴛ menu ☠️", description: "Get Bot Convert Menu", id: `${prefix}convertmenu` },
-            { title: "ɢʀᴏᴜᴘ ᴍᴇɴᴜ ☠️", description: "Get Group Only Commands", id: `${prefix}groupmenu` },
-            { title: "ᴀɪ ᴍᴇɴᴜ ☠️", description: "Get Bot AI Commands List", id: `${prefix}aimenu` },
-            { title: "ꜱᴇᴀʀᴄʜ menu ☠️", description: "Get Bot Search Menu", id: `${prefix}searchmenu` },
-            { title: "ꜰᴜɴ menu ☠️", description: "Fun Joke Menu Bot", id: `${prefix}funmenu` },
-            { title: "ʙᴜɢ menu ☠️", description: "Owner Only Bug Menu", id: `${prefix}bugmenu` },
-            { title: "ʀᴀɴᴅᴏᴍ ᴍᴇɴᴜ ☠️", description: "Random Commands Menu", id: `${prefix}randommenu` }
+            { title: "ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ 📥", description: "Get Bot Download Menu", id: `${prefix}downloadmenu` },
+            { title: "ᴍᴏᴠɪᴇ ᴍᴇɴᴜ 🎬", description: "Get Bot Movie Menu", id: `${prefix}moviemenu` },
+            { title: "ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ ♻️", description: "Get Bot Convert Menu", id: `${prefix}convertmenu` },
+            { title: "ɢʀᴏᴜᴘ ᴍᴇɴᴜ 👥", description: "Get Group Only Commands", id: `${prefix}groupmenu` },
+            { title: "ᴀɪ ᴍᴇɴᴜ 🤖", description: "Get Bot AI Commands List", id: `${prefix}aimenu` },
+            { title: "ꜱᴇᴀʀᴄʜ ᴍᴇɴᴜ 🔍", description: "Get Bot Search Menu", id: `${prefix}searchmenu` },
+            { title: "ꜰᴜɴ ᴍᴇɴᴜ 😂", description: "Fun Joke Menu Bot", id: `${prefix}funmenu` },
+            { title: "ʙᴜɢ ᴍᴇɴᴜ 💥", description: "Owner Only Bug Menu", id: `${prefix}bugmenu` },
+            { title: "ᴏᴛʜᴇʀ ᴍᴇɴᴜ 🤤", description: "Other Commands Menu", id: `${prefix}othermenu` }
         ];
 
         let buttonSections = [
             {
-                title: "List of SHONU X MD Bot Commands",
-                highlight_label: "SHONU X",
+                title: "THARUSHA-MD Command list.",
+                highlight_label: "THARUZZ",
                 rows: vpsOptions
             }
         ];
@@ -56,7 +58,7 @@ cmd({
                 nativeFlowInfo: {
                     name: "single_select",
                     paramsJson: JSON.stringify({
-                        title: "Choose Menu ➌ Tab ☠️",
+                        title: "Select Your Choosen",
                         sections: buttonSections
                     })
                 }
@@ -75,7 +77,7 @@ cmd({
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '@newsletter',
-                    newsletterName: `shonu💗`,
+                    newsletterName: `ᴛʜᴀʀᴜꜱʜᴀ 〽️ᴅ`,
                     serverMessageId: 143
                 }
             }
