@@ -17,9 +17,12 @@ cmd(
     filename: __filename,
   },
   async (
-    client,         // WhatsApp socket/client instance
-    message,        // The message object
-    store,          // Store or context
+    client,
+    conn,// WhatsApp socket/client instance
+    message,
+    m,// The message object
+    store, 
+    mek,// Store or context
     { from, prefix, query, reply } // Destructured parameters
   ) => {
     try {
@@ -32,7 +35,7 @@ cmd(
       const footerText = config.FOOTER;
 
       let responseText =
-        '\n🎶 *SONG DOWNLOADER* 🎶\n\n' +
+        '*SONG DOWNLOADER* 🎶\n\n' +
         '┌────────────────────┐\n' +
         '│ 🎵 *Title:* ' + video.title + '\n' +
         '│ 👁️ *Views:* ' + video.views + '\n' +
@@ -77,6 +80,23 @@ cmd(
       } else if (config.MODE === 'nonbutton') {
         await client.buttonMessage(from, buttonMessage, message);
       }*/
+      conn.sendMessage(m.chat, {
+            buttons,
+            headerType: 1,
+            viewOnce: true,
+            caption: responseText,
+            image: { url: video.thumbnail },
+            contextInfo: {
+                mentionedJid: [m.sender], 
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363411607943828@newsletter',
+                    newsletterName: `ᴛʜᴀʀᴜꜱʜᴀ 〽️ᴅ`,
+                    serverMessageId: 143
+                }
+            }
+        }, { quoted: mek });
     } catch (error) {
       console.error(error);
       await reply('❌ *Song not found or an error occurred.*');
