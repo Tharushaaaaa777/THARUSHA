@@ -4,7 +4,7 @@ const os = require('os')
 var { get_set , input_set } = require('../lib/set_db') 
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson, jsonformat} = require('../lib/functions')
 const pakaya = "`"
-
+const prefix = config.PREFIX
 
 cmd({
     pattern: "alive",
@@ -12,11 +12,13 @@ cmd({
     desc: "Check bot Commands.",
     category: "main",
     filename: __filename
-}, async (conn, mek, m, { reply, prefix }) => {
+}, async (conn, mek, m, { reply, prefix, pushname}) => {
     try {
 
-        let teksnya = `👋 *🅷🅴🅻🅻🅾 𝘣𝘶𝘥𝘥𝘺 𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 ${pakaya}ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ${pakaya} 😗*
-
+        let teksnya = `👋 *🅷🅴🅻🅻🅾 ${pushname} 𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 ${pakaya}ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ${pakaya} 😗*
+*╭──────────⊶*
+*│ 🌏 ${pakaya}ɪ'ᴍ ᴀʟɪᴠᴇ ɴᴏᴡ...${pakaya}*
+*╰─────────────⊶*
 *┏━━━━━━━━━━━━━━━━━━━┓*
 *┃ 👾 ${pakaya}ʙᴏᴛ :${pakaya} ᴛʜᴀʀᴜꜱʜᴀ ᴍᴅ* 
 *┃ 👤 ${pakaya}ᴏᴡɴᴇʀ :${pakaya} ᴛʜᴀʀᴜꜱʜᴀ ꜱᴀɴᴅɪᴘᴀ* 
@@ -24,12 +26,11 @@ cmd({
 *┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*
 *┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*
 *┗━━━━━━━━━━━━━━━━━━━┛*
+`;
 
-📜 *тнαяυѕнα-м∂ ¢σммαη∂ ℓιѕт*`;
+        let imageUrl = "https://i.ibb.co/Z1zJCY2z/Tharusha-Md.jpg";
 
-        let imageUrl = "https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg";
-
-        let vpsOptions = [
+       /* let vpsOptions = [
         
             { title: "ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ 📥", description: "Get Bot Download Menu", id: `${prefix}downloadmenu` },
             { title: "ᴍᴏᴠɪᴇ ᴍᴇɴᴜ 🎬", description: "Get Bot Movie Menu", id: `${prefix}moviemenu` },
@@ -40,17 +41,31 @@ cmd({
             { title: "ꜰᴜɴ ᴍᴇɴᴜ 😂", description: "Fun Joke Menu Bot", id: `${prefix}funmenu` },
             { title: "ʙᴜɢ ᴍᴇɴᴜ 💥", description: "Owner Only Bug Menu", id: `${prefix}bugmenu` },
             { title: "ᴏᴛʜᴇʀ ᴍᴇɴᴜ 🤤", description: "Other Commands Menu", id: `${prefix}othermenu` }
-        ];
+        ];*/
 
-        let buttonSections = [
+       /* let buttonSections = [
             {
                 title: "THARUSHA-MD Command list.",
                 highlight_label: "THARUZZ",
                 rows: vpsOptions
             }
-        ];
+        ];*/
 
-        let buttons = [
+         const buttons = [
+        {
+          buttonId: prefix + 'menu',
+          buttonText: { displayText: 'Bot Commands 📜' },
+          type: 1,
+        },
+        {
+          buttonId: prefix + 'ping',
+          buttonText: { displayText: 'Bot Speed 📍' },
+          type: 1,
+        },
+      ];
+        
+
+      /*  let buttons = [
             {
                 buttonId: "action",
                 buttonText: { displayText: "Select Menu" },
@@ -63,7 +78,7 @@ cmd({
                     })
                 }
             }
-        ];
+        ];*/
 
         conn.sendMessage(m.chat, {
             buttons,
