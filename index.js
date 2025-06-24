@@ -52,7 +52,7 @@ var { get_set , input_set } = require('./lib/set_db')
 const axios = require('axios')
 const cheerio = require('cheerio');
  function genMsgId() {
-  const lt = 'VajiraTech';
+  const lt = 'Tharushaofc';
   const prefix = "3EB";
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   let randomText = prefix;
@@ -69,7 +69,7 @@ const {
 } = require('megajs')
 const path = require('path')
 const msgRetryCounterCache = new NodeCache()
-const ownerNumber = '94704031866'
+const ownerNumber = '94740326138'
 
 
 
@@ -138,13 +138,13 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
                 }
             });
             console.log('Plugins installed done ✅')
-            console.log('SHONU X SYSTEM connected ✅')
+            console.log('THARUSHA-MD SYSTEM connected ✅')
 await conn.sendMessage(config.OWNER_NUMBER + "@s.whatsapp.net", {
-text: "*🔥 SHONU X MD  successfully connected* ✓\n\n\n> ◦ *Official GitHub* - ```https://github.com/shawteach```\n> ꜱʜᴀᴅᴏᴡ ᴍᴏᴠɪᴇ x ᴋɪʟᴀʀ ɴᴇᴡ ᴘʀᴏᴅᴜᴄᴛɪᴏɴꜱ: .joinsup\n*🔥 SHONU x MD Data Base successful🔥*\n*🔥𝗡𝗘𝗪 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 𝗡𝗘𝗫𝗧 𝗨𝗣𝗗𝗔𝗧𝗘🔥*",
+text: "*🔥 THARUSHA MD  successfully connected* ✓\n\n\n> ◦ *Official GitHub* - ```https://github.com/tharuzzofc```*",
 contextInfo: {
 externalAdReply: {
-title: "🔥 SHONU x MD  🔥\nSuccessfully Connected !",	
-thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg',
+title: "🔥 THARUSHA MD  🔥\nSuccessfully Connected !",	
+thumbnailUrl: 'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg',
 sourceUrl: "",
 mediaType: 1,
 renderLargerThumbnail: true
@@ -230,7 +230,6 @@ connLft = await getBuffer(ppuser)
 │✑  𝗧𝗶𝗺𝗲 : 
 │✑  ${conntime} ${conndate}
 ╰────────────────────●
-ＳＨＯＮＵ Ｘ ＭＤ ＷＥＬＣＯＭＥ ＭＳＧ 💥
 
 *📄 DESCRIPTION 📄*
 
@@ -245,7 +244,7 @@ mentionedJid:[num],
 "externalAdReply": {
 "showAdAttribution": true,
 "renderLargerThumbnail": true,
-"title": ` 👨‍💻 ＳＨＯＮＵ Ｘ ＭＤ 👨‍💻`, 
+"title": `𝚃𝙷𝙰𝚁𝚄𝚂𝙷𝙰 〽️𝙳`, 
 "body": `${metadata.subject}`,	
 "containsAutoReply": true,
 "mediaType": 1, 
@@ -270,7 +269,8 @@ mentionedJid:[num],
 │✑  𝗧𝗶𝗺𝗲 : 
 │✑  ${conntime} ${conndate}
 ╰────────────────────●
-ＳＨＯＮＵ Ｘ ＭＤ ＧＯＯＤ ＢＹＥ ＭＳＧ 💥
+
+> *බෑ... නවතන්න යන්නම ඔනේනම් යන්න...😓*
 
 *📄 DESCRIPTION 📄*
 
@@ -286,7 +286,7 @@ mentionedJid:[num],
 "externalAdReply": {
 "showAdAttribution": true,
 "renderLargerThumbnail": true,
-"title": ` 👨‍💻 ＳＨＯＮＵ Ｘ ＭＤ 👨‍💻`, 
+"title": `𝚃𝙷𝙰𝚁𝚄𝚂𝙷𝙰 〽️𝙳`, 
 "body": `${metadata.subject}`,	
 "containsAutoReply": true,
 "mediaType": 1, 
@@ -367,14 +367,14 @@ q = args.join(' ')
             const senderNumber = sender.split('@')[0]
             const botNumber = conn.user.id.split(':')[0]
             const pushname = mek.pushName || 'Sin Nombre'
-	    const ownbot = '94704031866'
+	    const ownbot = '94740326138'
 	    const isownbot = ownbot?.includes(senderNumber)
-            const vajira = '94704031866'
+            const vajira = '94740326138'
             const isVajira = vajira?.includes(senderNumber)
 	    const developers = '94704031866'
             const isbot = botNumber.includes(senderNumber)
 	    const isdev = developers.includes(senderNumber) 	    
-            let epaneda ='94704031866'
+            let epaneda ='94740326138'
             const epada = epaneda.split(",")	    
             const isDev = [ ...epada ].map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net").includes(sender)
 	    const botNumber2 = await jidNormalizedUser(conn.user.id)
@@ -425,15 +425,15 @@ contextInfo: {
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363401474002174@newsletter',
+      newsletterJid: '@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'SHONU x MD',
-body: 'ℓαкѕнαη ∂αмαуαηтнα',
+title: 'THARUSHA MD',
+body: 'тнαяυѕнα ѕαη∂ιρα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94704031866" ,
-thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
+sourceUrl: "https://wa.me/94740326138" ,
+thumbnailUrl: 'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -462,15 +462,15 @@ const textmsg = await conn.sendMessage(from, { text: buttonMessage ,
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363401474002174@newsletter',
+      newsletterJid: '@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'SHONU x MD',
-body: 'ℓαкѕнαη ∂αмαуαηтнα',
+title: 'THARUSHA MD',
+body: 'тнαяυѕнα ѕαη∂ιρα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94704031866" ,
-thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
+sourceUrl: "https://wa.me/94740326138" ,
+thumbnailUrl: 'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -485,15 +485,15 @@ contextInfo: {
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363401474002174@newsletter',
+      newsletterJid: '@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'SHONU x MD',
-body: 'ℓαкѕнαη ∂αмαуαηтнα',
+title: 'THARUSHA MD',
+body: 'тнαяυѕнα ѕαη∂ιρα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94704031866" ,
-thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
+sourceUrl: "https://wa.me/94740326138" ,
+thumbnailUrl: 'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -560,15 +560,15 @@ const textmsg = await conn.sendMessage(from, { text: buttonMessage ,contextInfo:
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363401474002174@newsletter',
+      newsletterJid: '@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'SHONU x md',
-body: 'ℓαкѕнαη ∂αмαуαηтнα',
+title: 'THARUSHA md',
+body: 'тнαяυѕнα ѕαη∂ιρα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94704031866" ,
-thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
+sourceUrl: "https://wa.me/94740326138" ,
+thumbnailUrl: 'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -582,15 +582,15 @@ const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: butt
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363401474002174@newsletter',
+      newsletterJid: '@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'SHONU x MD',
-body: 'ℓαкωнαη ∂αмαуαηтнα',
+title: 'THARUSHA MD',
+body: 'тнαяυѕнα ѕαη∂ιρα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94704031866" ,
-thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
+sourceUrl: "https://wa.me/94740326138" ,
+thumbnailUrl: 'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -631,15 +631,15 @@ contextInfo: {
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363401474002174@newsletter',
+      newsletterJid: '@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'SHONU x MD',
-body: 'ℓαкѕнαη ∂αмαуαηтнα',
+title: 'THARUSHA MD',
+body: 'тнαяυѕнα ѕαη∂ιρα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94704031866" ,
-thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
+sourceUrl: "https://wa.me/94740326138" ,
+thumbnailUrl: 'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -678,15 +678,15 @@ contextInfo: {
     forwardingScore: 1,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363401474002174@newsletter',
+      newsletterJid: '@newsletter',
       serverMessageId: 127
     },
 externalAdReply: { 
-title: 'SHONU x MD',
-body: 'ℓαкѕнαη ∂αмαуαηтнα',
+title: 'THARUSHA MD',
+body: 'тнαяυѕнα ѕαη∂ιρα',
 mediaType: 1,
-sourceUrl: "https://wa.me/94704031866" ,
-thumbnailUrl: 'https://i.ibb.co/xtbx9cMM/4443.jpg' ,
+sourceUrl: "https://wa.me/94740326138" ,
+thumbnailUrl: 'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -715,8 +715,8 @@ editedMessage: {
             
 	      
             const ownerdata = (await axios.get('https://gist.github.com/Lakshanteach/4097b7c56cd7b2fb18de8fd5f3e3d306.js')).data
-            config.LOGO = `https://i.ibb.co/HpCN8RtR/7946.jpg`
-            config.FOOTER = `> ꜱʜᴏɴᴜ x ᴍᴅ ʙʏ ʟᴀᴋꜱʜᴀɴ ᴅᴀᴍᴀʏᴀɴᴛʜᴀ`
+            config.LOGO = `https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg`
+            config.FOOTER = `> © ᴘᴏᴡᴇʀᴅ ʙʏ ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ`
             config.NEWS = ownerdata.news
             config.API = ownerdata.api
             config.APIKEY = ownerdata.apikey
@@ -950,7 +950,7 @@ if (isAnti && isBotAdmins) {
   if(!isMe){
 if (body.match(`https`)) {
     await conn.sendMessage(from, { delete: mek.key })	  	  
-  reply('*「 ⚠️ 𝑳𝑰𝑵𝑲 𝑫𝑬𝑳𝑬𝑻𝑬𝑫 𝘉𝘠 𝘚𝘏𝘖𝘕𝘜 ⚠️ 」*')
+  reply('*「 ⚠️ 𝑳𝑰𝑵𝑲 𝑫𝑬𝑳𝑬𝑻𝑬𝑫 ⚠️ 」*')
 }
 }
 }
@@ -1254,9 +1254,9 @@ if(!isOwner) {	//!isOwner) {
 }
 
 app.get("/", (req, res) => {
-res.send("🇯🇵 SHONU x MD  Working successfully!");
+res.send("🇯🇵 THARUSHA MD  Working successfully!");
 });
-app.listen(port, () => console.log(`Shonu Server listening on port http://localhost:${port}`));
+app.listen(port, () => console.log(`THARUSHA Server listening on port http://localhost:${port}`));
 
 setTimeout(() => {
 connectToWA()
