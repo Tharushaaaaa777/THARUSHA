@@ -13,7 +13,7 @@ cmd(
     use: '.song <query or url>',
     react: '🎧',
     desc: 'Download high-quality songs from YouTube',
-    category: 'Download',
+    category: 'download',
     filename: __filename,
   },
   async (
