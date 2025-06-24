@@ -1,10 +1,10 @@
 {
-    "name": "MINUKI-MD",
-    "version": "1.0.0",
+    "name": "THARUZZ-MD",
+    "version": "2.0.0",
     "type": "commonjs",
     "scripts": {
-        "start": "pm2 start index.js --deep-monitoring --attach --name MINUKI",
-        "stop": "pm2 stop MINUKI",
+        "start": "pm2 start index.js --deep-monitoring --attach --name THARUZZ",
+        "stop": "pm2 stop THARUZZ",
         "restart": "pm2 restart Tc && pm2 logs",
         "stash": "git stash && git stash drop"
     },
