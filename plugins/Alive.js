@@ -54,12 +54,12 @@ cmd({
 
          const buttons = [
         {
-          buttonId: prefix + 'menu',
+          buttonId: /*prefix + */`${prefix}menu`,
           buttonText: { displayText: 'Bot Commands 📜' },
           type: 1,
         },
         {
-          buttonId: prefix + 'ping',
+          buttonId: /*prefix + */`${prefix}ping`,
           buttonText: { displayText: 'Bot Speed 📍' },
           type: 1,
         },
