@@ -80,7 +80,8 @@ cmd(
       } else if (config.MODE === 'nonbutton') {
         await client.buttonMessage(from, buttonMessage, message);
       }*/
-      conn.sendMessage(m.chat, {
+      client.sendMessage(
+     from, {
             buttons,
             headerType: 1,
             viewOnce: true,
@@ -96,7 +97,7 @@ cmd(
                     serverMessageId: 143
                 }
             }
-        }, { quoted: mek });
+        }, { quoted: message });
     } catch (error) {
       console.error(error);
       await reply('❌ *Song not found or an error occurred.*');
