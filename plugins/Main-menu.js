@@ -307,7 +307,7 @@ other: ''
 
 for (let i = 0; i < commands.length; i++) {
 if (commands[i].pattern && !commands[i].dontAddCommandList) {
-menu[commands[i].category] += `${pakaya}.${pakaya} *${commands[i].pattern}*\n`;
+menu[commands[i].category] += `${pakaya}✘${pakaya} *${commands[i].pattern}*\n`;
  }
 }
 
@@ -373,7 +373,31 @@ let madeMenu = `
 
 > *© ᴛʜᴀʀᴜᴢᴢ ᴏꜰᴄ*`
 
-return await conn.sendMessage(from,{image: {url: `https://files.catbox.moe/de82e3.jpg`},caption:madeMenu},{quoted: mek})
+return await conn.sendMessage(from,
+                              {
+                                  caption:madeMenu,
+                                  contextInfo: {
+      mentionedJid: ['94740326138@s.whatsapp.net'], // specify mentioned JID(s) if any
+      groupMentions: [],
+      forwardingScore: 999,
+      isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+          newsletterJid: '@newsletter',
+          newsletterName: "𝒯𝐻𝒜𝑅𝒰𝒵𝒵 𝒪𝐹𝒞",
+          serverMessageId: 999
+      },
+      externalAdReply: {
+          title: '𝒯𝐻𝒜𝑅𝒰𝒵𝒵 𝒪𝐹𝒞',
+          body: 'ᴛʜᴀʀᴜᴢᴢ ᴏꜰᴄ',
+          mediaType: 1,
+          sourceUrl: "https://github.com/Tharushaaaaa777",
+          thumbnailUrl: tharusha_md_img, // This should match the image URL provided above
+          renderLargerThumbnail: false,
+          showAdAttribution: true
+      }
+  }
+                              }
+                              ,{quoted: mek})
 }catch(e){
 console.log(e)
 reply(`𝔼𝕣𝕣𝕣𝕠𝕣`)
