@@ -54,7 +54,7 @@ async function giftm(url, retries = 5) {
 
 // Command: Download YouTube song
 cmd({
-  pattern: 'song',
+  pattern: 'songtharuzz',
   desc: 'To download songs.',
   react: '🎶',
   use: '.song <Text or Link>',
