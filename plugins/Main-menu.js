@@ -31,7 +31,7 @@ cmd({
 
         let imageUrl = "https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg";
 
-        let vpsOptions = [
+   /* let vpsOptions = [
         
             { title: "ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ 📥", description: "Get Bot Download Menu", id: `${prefix}downmenu` },
             { title: "ᴍᴏᴠɪᴇ ᴍᴇɴᴜ 🎬", description: "Get Bot Movie Menu", id: `${prefix}moviemenu` },
@@ -65,10 +65,56 @@ cmd({
                     })
                 }
             }
-        ];
+        ]; */
 
         conn.sendMessage(m.chat, {
-            buttons,
+            buttons: [
+              {
+                buttonId: 'interactive_menu',
+                buttonText: { displayText: 'INTERACTIVE MENU 📜' }, // Inferred from _0x44002a(0x5db)
+                type: 4,
+                nativeFlowInfo: {
+                  name: 'interactive_message', // Inferred from _0x44002a(0x12c)
+                  paramsJson: JSON.stringify({
+                    title: 'THARUZZ-MD MENU', // Inferred from _0x3fb6dc(0x606)
+                    sections: [
+                      {
+                        title: 'Menu Options', // Inferred from _0x3fb6dc(0x3fb)
+                        highlight_label: '𝚃𝙷𝙰𝚁𝚄𝚉𝚉 𝙼𝙳 </>',
+                        rows: [
+                         /* { title: 'Main Menu', description: 'Get Bot Main Commands Menu', id: `${prefix}mainmenu` },
+                          { title: 'Download Menu', description: 'Get Bot Download Commands Menu', id: `${prefix}downloadmenu` },
+                          { title: 'Search Menu', description: 'Get Bot Search Menu', id: `${prefix}searchmenu` },
+                          { title: 'Convert Menu', description: 'Get Bot Convert Menu', id: `${prefix}convertmenu` },
+                          { title: 'Owner Menu', description: 'Get Bot Owner Commands Menu', id: `${prefix}ownermenu` },
+                          { title: 'AI Menu', description: 'Get Bot AI Commands List', id: `${prefix}aimenu` },
+                          { title: 'Group Menu', description: 'Get Bot Group Commands Menu', id: `${prefix}groupmenu` },
+                          { title: 'Other Menu', description: 'Get Bot Other Commands Menu', id: `${prefix}othermenu` },
+                          { title: 'Fun Menu', description: 'Get Bot Fun Commands Menu', id: `${prefix}funmenu` },
+                          { title: 'News Menu', description: 'Get Bot NEWS Commands Menu', id: `${prefix}newsmenu` },
+                          { title: 'Movie Menu', description: 'Get Bot Movie Commands Menu', id: `${prefix}moviemenu` },
+                          { title: 'Settings Menu', description: 'Get Bot Settings Menu', id: `${prefix}settingmenu` }*/ // Inferred from _0x3fb6dc(0x411)
+
+                            { title: "ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ 📥", description: "Get Bot Download Menu", id: `${prefix}downmenu` },
+            { title: "ᴍᴏᴠɪᴇ ᴍᴇɴᴜ 🎬", description: "Get Bot Movie Menu", id: `${prefix}moviemenu` },
+            { title: "ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ ♻️", description: "Get Bot Convert Menu", id: `${prefix}convertmenu` },
+            { title: "ɢʀᴏᴜᴘ ᴍᴇɴᴜ 👥", description: "Get Group Only Commands", id: `${prefix}groupmenu` },
+            { title: "ᴀɪ ᴍᴇɴᴜ 🤖", description: "Get Bot AI Commands List", id: `${prefix}aimenu` },
+            { title: "ꜱᴇᴀʀᴄʜ ᴍᴇɴᴜ 🔍", description: "Get Bot Search Menu", id: `${prefix}searchmenu` },
+            { title: "ꜰᴜɴ ᴍᴇɴᴜ 😂", description: "Fun Joke Menu Bot", id: `${prefix}funmenu` },
+            { title: "ʙᴜɢ ᴍᴇɴᴜ 💥", description: "Owner Only Bug Menu", id: `${prefix}bugmenu` },
+            { title: "ᴏᴛʜᴇʀ ᴍᴇɴᴜ 🤤", description: "Other Commands Menu", id: `${prefix}othermenu` }
+
+                        ]
+                      }
+                    ]
+                  })
+                }
+              },
+              { buttonId: `${prefix}listmenu`, buttonText: { displayText: 'LIST MENU 📜' }, type: 1 },
+              { buttonId: `${prefix}ping`, buttonText: { displayText: 'PING ⚡' }, type: 1 }
+            ],
+            //buttons,
             headerType: 1,
             viewOnce: true,
             caption: teksnya,
