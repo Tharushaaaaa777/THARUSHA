@@ -2,7 +2,7 @@ const config = require('../config');
 const { cmd } = require('../command');
 const { ytsearch } = require('@dark-yasiya/yt-dl.js');
 
-cmd({ 
+/*cmd({ 
     pattern: "song", 
     alias: ["ytmp3"], 
     react: "🎶", 
@@ -47,7 +47,7 @@ cmd({
         console.error(error);
         reply("An error occurred. Please try again.");
     }
-});
+});*/
 
 // MP4 video download
 cmd({ 
