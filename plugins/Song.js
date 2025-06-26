@@ -8,7 +8,7 @@ const pakaya = "`"
 
 cmd(
   {
-    pattern: 'song',
+    pattern: 'sonhukng',
     alias: ['ytsong'],
     use: '.song <query or url>',
     react: '🎧',
