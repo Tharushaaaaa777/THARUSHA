@@ -2,7 +2,7 @@ const axios = require('axios');
 const fs = require('fs');
 const yts = require('yt-search');
 const { cmd } = require('../lib/command');
-const { ytmp3, ytmp3new, ytmp444, getImage, fetchJson } = require('../lib/functions');
+const { ytmp3, ytmp3new, ytmp444, getImage, fetchJson } = require('../lib/functions2');
 const config = require('../settings');
 
 // Regular expression to validate YouTube URLs
