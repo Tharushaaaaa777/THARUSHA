@@ -22,54 +22,46 @@ cmd({
 *╰─────────────⊶*
 *┏━━━━━━━━━━━━━━━━━━━┓*
 *┃ 👾 ${pakaya}ʙᴏᴛ :${pakaya} ᴛʜᴀʀᴜꜱʜᴀ ᴍᴅ* 
-*┃ 👤 ${pakaya}ᴏᴡɴᴇʀ :${pakaya} ᴛʜᴀʀᴜꜱʜᴀ ꜱᴀɴᴅɪᴘᴀ* 
 *┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*
 *┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*
-*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*
 *┗━━━━━━━━━━━━━━━━━━━┛*
 `;
 
         let imageUrl = "https://i.ibb.co/Z1zJCY2z/Tharusha-Md.jpg";
 
-       /* let vpsOptions = [
+        let vpsOptions = [
         
-            { title: "ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ 📥", description: "Get Bot Download Menu", id: `${prefix}downloadmenu` },
-            { title: "ᴍᴏᴠɪᴇ ᴍᴇɴᴜ 🎬", description: "Get Bot Movie Menu", id: `${prefix}moviemenu` },
-            { title: "ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ ♻️", description: "Get Bot Convert Menu", id: `${prefix}convertmenu` },
-            { title: "ɢʀᴏᴜᴘ ᴍᴇɴᴜ 👥", description: "Get Group Only Commands", id: `${prefix}groupmenu` },
-            { title: "ᴀɪ ᴍᴇɴᴜ 🤖", description: "Get Bot AI Commands List", id: `${prefix}aimenu` },
-            { title: "ꜱᴇᴀʀᴄʜ ᴍᴇɴᴜ 🔍", description: "Get Bot Search Menu", id: `${prefix}searchmenu` },
-            { title: "ꜰᴜɴ ᴍᴇɴᴜ 😂", description: "Fun Joke Menu Bot", id: `${prefix}funmenu` },
-            { title: "ʙᴜɢ ᴍᴇɴᴜ 💥", description: "Owner Only Bug Menu", id: `${prefix}bugmenu` },
-            { title: "ᴏᴛʜᴇʀ ᴍᴇɴᴜ 🤤", description: "Other Commands Menu", id: `${prefix}othermenu` }
-        ];*/
+            { title: "ɢᴇᴛ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅ ʟɪꜱᴛ 📜", description: "Get Bot Commands", id: `${prefix}menu` },
+            { title: "ɢᴇᴛ ʙᴏᴛ ꜱᴘᴇᴇᴅ 🚀", description: "Get Bot Speed", id: `${prefix}ping` },
+            { title: "ɢᴇᴛ ʙᴏᴛ ꜱʏꜱᴛᴇᴍ 🧬", description: "Get Bot System", id: `${prefix}system` },
+          ];
 
-       /* let buttonSections = [
+        let buttonSections = [
             {
-                title: "THARUSHA-MD Command list.",
+                title: "THARUSHA-MD sections.",
                 highlight_label: "THARUZZ",
                 rows: vpsOptions
             }
-        ];*/
+        ];
 
-         const buttons = [
+         /*const buttons = [
         {
-          buttonId: /*prefix + */`${prefix}menu`,
+          buttonId: prefix + `${prefix}menu`,
           buttonText: { displayText: 'Bot Commands 📜' },
           type: 1,
         },
         {
-          buttonId: /*prefix + */`${prefix}ping`,
+          buttonId: prefix + `${prefix}ping`,
           buttonText: { displayText: 'Bot Speed 📍' },
           type: 1,
         },
-      ];
+      ];*/
         
 
-      /*  let buttons = [
+        let buttons = [
             {
                 buttonId: "action",
-                buttonText: { displayText: "Select Menu" },
+                buttonText: { displayText: "Select" },
                 type: 4,
                 nativeFlowInfo: {
                     name: "single_select",
@@ -79,7 +71,7 @@ cmd({
                     })
                 }
             }
-        ];*/
+        ];
 
         conn.sendMessage(m.chat, {
             buttons,
