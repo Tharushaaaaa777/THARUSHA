@@ -45,9 +45,9 @@ cmd({
 
    let vpsOptions = [
         
-            { title: "ᴀᴜᴅɪᴏ ᴛʏᴘᴇ 🎧", description: "Download audio type.", id: `${prefix}songdlaudio` },
-            { title: "ᴅᴏᴄᴜᴍᴇɴᴛ ᴛʏᴘᴇ 📁", description: "Download document type.", id: `${prefix}songdldocument` },
-            { title: "ᴠᴏɪᴄᴇ ᴄᴜᴛ 🎤", description: "Download voice cut type.", id: `${prefix}songdlvoicecut` },
+            { title: "ᴀᴜᴅɪᴏ ᴛʏᴘᴇ 🎧", description: "Download audio type.", id: `${prefix}songdlaudio ${yts.url}` },
+            { title: "ᴅᴏᴄᴜᴍᴇɴᴛ ᴛʏᴘᴇ 📁", description: "Download document type.", id: `${prefix}songdldocument ${yts.url}` },
+            { title: "ᴠᴏɪᴄᴇ ᴄᴜᴛ 🎤", description: "Download voice cut type.", id: `${prefix}songdlvoicecut ${yts.url}` },
            ];
 
         let buttonSections = [
@@ -120,50 +120,104 @@ cmd({
             return reply("Failed to fetch the audio. Please try again later.");
             }
 
-       /* let teksnya = `*╭───────────────⊶*
-*│ 🎧 ${pakaya}𝚂𝙾𝙽𝙶 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁${pakaya}*
-*╰─────────────────⊶*
-*┏━━━━━━━━━━━━━━━━━━━━┓*
-*┃*🎵 *${pakaya}ᴛɪᴛʟᴇ:${pakaya}* ${yts.title}
-*┃*⏳ *${pakaya}ᴅᴜʀᴀᴛɪᴏɴ:${pakaya}* ${yts.timestamp}
-*┃*🔰 *${pakaya}ᴠɪᴇᴡꜱ:${pakaya}* ${yts.views}
-*┃*👤 *${pakaya}ᴀᴜᴛʜᴏʀ:${pakaya}* ${yts.author.name}
-*┃*🔗 *${pakaya}ᴜʀʟ:${pakaya}* ${yts.url}
-*┗━━━━━━━━━━━━━━━━━━━━┛*`;
+        conn.sendMessage(m.chat, {
+            audio: { url: data.result.downloadUrl },
+            mimetype: "audio/mpeg",
+            contextInfo: {
+        externalAdReply: {
+            title: yts.title,
+            body: "Join our WhatsApp Channel",
+            mediaType: 1,
+            thumbnailUrl: yts.thumbnail,
+            sourceUrl: 'https://whatsapp.com/channel/0029Vb4eZqo3bbV0lTGjFn2S',
+            mediaUrl: 'https://whatsapp.com/channel/0029Vb4eZqo3bbV0lTGjFn2S',
+            showAdAttribution: true,
+            renderLargerThumbnail: true
+        }
+     }
+        }, { quoted: mek });
 
-   let vpsOptions = [
+    } catch (e) {
+        console.error(e);
+        reply(`Error: ${e.message}`);
+    }
+});
+
+cmd({
+    pattern: "songdldocument",
+    react: "📄",
+    desc: "Download yt songs.",
+    category: "pakaya",
+    filename: __filename
+}, async (conn, mek, m, { from, prefix, quoted, q, reply }) => {
+      try {
+          if (!q) return await reply("Please provide a YouTube URL or song name.");
         
-            { title: "ᴀᴜᴅɪᴏ ᴛʏᴘᴇ 🎧", description: "Download audio type.", id: `${prefix}songdlaudio` },
-            { title: "ᴅᴏᴄᴜᴍᴇɴᴛ ᴛʏᴘᴇ 📁", description: "Download document type.", id: `${prefix}songdldocument` },
-            { title: "ᴠᴏɪᴄᴇ ᴄᴜᴛ 🎤", description: "Download voice cut type.", id: `${prefix}songdlvoicecut` },
-           ];
-
-        let buttonSections = [
-            {
-                title: "Select download type 📥",
-                highlight_label: "THARUZZ",
-                rows: vpsOptions
+        const yt = await ytsearch(q);
+        if (yt.results.length < 1) return reply("No results found!");
+        
+        let yts = yt.results[0];  
+        let apiUrl = `https://apis.davidcyriltech.my.id/youtube/mp3?url=${encodeURIComponent(yts.url)}`;
+        
+        let response = await fetch(apiUrl);
+        let data = await response.json();
+        
+        if (data.status !== 200 || !data.success || !data.result.downloadUrl) {
+            return reply("Failed to fetch the audio. Please try again later.");
             }
-        ];
 
-        let buttons = [
-            {
-                buttonId: "action",
-                buttonText: { displayText: "🔢 ꜱᴇʟᴇᴄᴛ ᴄᴀᴛᴏɢᴏʀʏ" },
-                type: 4,
-                nativeFlowInfo: {
-                    name: "single_select",
-                    paramsJson: JSON.stringify({
-                        title: "Select type",
-                        sections: buttonSections
-                    })
-                }
+        conn.sendMessage(m.chat, {
+            document: { url: data.result.downloadUrl }, 
+            mimetype: "audio/mpeg", 
+            fileName: `${yts.title}.mp3`, 
+            caption: "*♯ `𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚃𝙷𝙰𝚁𝚄𝚂𝙷𝙰 〽️𝙳`*",
+    contextInfo: {
+        externalAdReply: {
+            title: yts.title,
+            body: "Join our WhatsApp Channel",
+            mediaType: 1,
+            thumbnailUrl: yts.thumbnail,
+            sourceUrl: 'https://whatsapp.com/channel/0029Vb4eZqo3bbV0lTGjFn2S',
+            mediaUrl: 'https://whatsapp.com/channel/0029Vb4eZqo3bbV0lTGjFn2S',
+            showAdAttribution: true,
+            renderLargerThumbnail: true
+        }
+   }
+        }, { quoted: mek });
+
+    } catch (e) {
+        console.error(e);
+        reply(`Error: ${e.message}`);
+    }
+});
+
+cmd({
+    pattern: "songdlvoicecut",
+    react: "🎤",
+    desc: "Download yt songs.",
+    category: "pakaya",
+    filename: __filename
+}, async (conn, mek, m, { from, prefix, quoted, q, reply }) => {
+      try {
+          if (!q) return await reply("Please provide a YouTube URL or song name.");
+        
+        const yt = await ytsearch(q);
+        if (yt.results.length < 1) return reply("No results found!");
+        
+        let yts = yt.results[0];  
+        let apiUrl = `https://apis.davidcyriltech.my.id/youtube/mp3?url=${encodeURIComponent(yts.url)}`;
+        
+        let response = await fetch(apiUrl);
+        let data = await response.json();
+        
+        if (data.status !== 200 || !data.success || !data.result.downloadUrl) {
+            return reply("Failed to fetch the audio. Please try again later.");
             }
-        ]; */
 
         conn.sendMessage(m.chat, {
             audio: { url: data.result.downloadUrl },
             mimetype: "audio/mpeg",
+            ptt: true,
             contextInfo: {
         externalAdReply: {
             title: yts.title,
