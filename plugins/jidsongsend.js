@@ -5,7 +5,7 @@ const { cmd, commands } = require('../lib/command');
 const config = require('../settings');
 const { ytsearch } = require('@dark-yasiya/yt-dl.js');
 const monospace = "```"
-consr pakaya = "`"
+const pakaya = "`"
 
 // Store active searches per user or chat
 const activeSearches = new Map(); // Key: chat ID, Value: { isActive: boolean, targetJid: string }
