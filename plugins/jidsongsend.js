@@ -2,7 +2,6 @@
 // SUCCESS 
 
 const { cmd, commands } = require('../lib/command');
-st { cmd, commands } = require('../command');
 const config = require('../settings');
 const { ytsearch } = require('@dark-yasiya/yt-dl.js');
 const monospace = "```"
