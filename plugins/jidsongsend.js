@@ -3,8 +3,10 @@
 
 const { cmd, commands } = require('../lib/command');
 st { cmd, commands } = require('../command');
-const config = require('../config');
+const config = require('../settings');
 const { ytsearch } = require('@dark-yasiya/yt-dl.js');
+const monospace = "```"
+consr pakaya = "`"
 
 // Store active searches per user or chat
 const activeSearches = new Map(); // Key: chat ID, Value: { isActive: boolean, targetJid: string }
@@ -58,20 +60,20 @@ cmd({
 
             if (!mp3res?.success) continue;
 
-            const caption = ` 𝙎𝙊𝙉𝙂 🤍
+            const caption = `${pakaya}𝙏𝙃𝘼𝙍𝙐𝙎𝙃𝘼-𝙈𝘿 𝙎𝙊𝙉𝙂 𝙎𝙀𝙉𝘿${pakaya} 🤍
 
-🎬 *тιттℓє:* ${vid.title}
+🎬 *${pakaya}тιттℓє:${pakaya}* ${vid.title}
 
-⏱️ *∂υяєтιση:* ${vid.timestamp}
+⏱️ *${pakaya}∂υяєтιση:${pakaya}* ${vid.timestamp}
 
-👀 *νιєωѕ:* ${vid.views}
+👀 *${pakaya}νιєωѕ:${pakaya}* ${vid.views}
 
-👤 *αυтнσя:* ${vid.author.name}
+👤 *${pakaya}αυтнσя:${pakaya}* ${vid.author.name}
 
-🔗 *ѕηg ℓιηк:* ${vid.url}
+🔗 *${pakaya}ѕσηg ℓιηк:${pakaya}* ${vid.url}
 
 
-📲 ＦＯＬＬＯＷ _ＵＳ ━ https://whatsapp.com/channel/0029Vb6G0ODKAwEoAcgNXj2e
+📲 ${pakaya}ＦＯＬＬＯＷ _ＵＳ${pakaya} ━ ${monospace}https://whatsapp.com/channel/0029Vb9LTRHInlqISdCfln45${monospace}
 
 `;
 
@@ -84,7 +86,7 @@ cmd({
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '@newsletter',
-                        newsletterName: '✘  ＳＯＮＧ 🔥',
+                        newsletterName: 'T H A R U S H A  M D 🔥',
                         serverMessageId: 143
                     }
                 }
