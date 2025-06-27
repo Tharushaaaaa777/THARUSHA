@@ -11,6 +11,7 @@ const pakaya = "`"
 
 cmd({
     pattern: "song",
+    alias: ["mp3"], 
     react: "🎵",
     desc: "Download yt songs.",
     category: "download",
@@ -231,6 +232,177 @@ cmd({
         }
      }
         }, { quoted: mek });
+
+    } catch (e) {
+        console.error(e);
+        reply(`Error: ${e.message}`);
+    }
+});
+
+cmd({
+    pattern: "video",
+    alias: ["mp4"], 
+    react: "🎥",
+    desc: "Download yt video.",
+    category: "download",
+    filename: __filename
+}, async (conn, mek, m, { from, prefix, quoted, q, reply }) => {
+      try {
+          if (!q) return await reply("Please provide a YouTube URL or song name.");
+        
+        const yt = await ytsearch(q);
+        if (yt.results.length < 1) return reply("No results found!");
+        
+        let yts = yt.results[0];  
+        let apiUrl = `https://apis.davidcyriltech.my.id/youtube/mp3?url=${encodeURIComponent(yts.url)}`;
+        
+        let response = await fetch(apiUrl);
+        let data = await response.json();
+        
+        if (data.status !== 200 || !data.success || !data.result.downloadUrl) {
+            return reply("Failed to fetch the audio. Please try again later.");
+            }
+
+        let teksnya = `*╭───────────────⊶*
+*│ 🎧 ${pakaya}𝚅𝙸𝙳𝙴𝙾 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁${pakaya}*
+*╰─────────────────⊶*
+*┏━━━━━━━━━━━━━━━━━━━━┓*
+*┃*🎵 *${pakaya}ᴛɪᴛʟᴇ:${pakaya}* ${yts.title}
+*┃*⏳ *${pakaya}ᴅᴜʀᴀᴛɪᴏɴ:${pakaya}* ${yts.timestamp}
+*┃*🔰 *${pakaya}ᴠɪᴇᴡꜱ:${pakaya}* ${yts.views}
+*┃*👤 *${pakaya}ᴀᴜᴛʜᴏʀ:${pakaya}* ${yts.author.name}
+*┃*🔗 *${pakaya}ᴜʀʟ:${pakaya}* ${yts.url}
+*┗━━━━━━━━━━━━━━━━━━━━┛*`;
+
+   let vpsOptions = [
+        
+            { title: "ᴠɪᴅᴇᴏ ᴛʏᴘᴇ 🎧", description: "Download video type.", id: `${prefix}videodlvideo ${yts.url}` },
+            { title: "ᴅᴏᴄᴜᴍᴇɴᴛ ᴛʏᴘᴇ 📁", description: "Download document type.", id: `${prefix}videodldocument ${yts.url}` },
+          ];
+
+        let buttonSections = [
+            {
+                title: "Select download type 📥",
+                highlight_label: "THARUZZ",
+                rows: vpsOptions
+            }
+        ];
+
+        let buttons = [
+            {
+                buttonId: "action",
+                buttonText: { displayText: "🔢 ꜱᴇʟᴇᴄᴛ ᴄᴀᴛᴏɢᴏʀʏ" },
+                type: 4,
+                nativeFlowInfo: {
+                    name: "single_select",
+                    paramsJson: JSON.stringify({
+                        title: "Select type",
+                        sections: buttonSections
+                    })
+                }
+            }
+        ]; 
+
+        conn.sendMessage(m.chat, {
+            buttons,
+            headerType: 1,
+            viewOnce: true,
+            caption: teksnya,
+            image: { url: yts.thumbnail },
+            contextInfo: {
+                mentionedJid: [m.sender], 
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363411607943828@newsletter',
+                    newsletterName: `ᴛʜᴀʀᴜꜱʜᴀ 〽️ᴅ`,
+                    serverMessageId: 143
+                }
+            }
+        }, { quoted: mek });
+
+    } catch (e) {
+        console.error(e);
+        reply(`Error: ${e.message}`);
+    }
+});
+
+cmd({
+    pattern: "videodlvideo",
+    react: "📥",
+    desc: "Download yt video.",
+    category: "pakaya",
+    filename: __filename
+}, async (conn, mek, m, { from, prefix, quoted, q, reply }) => {
+      try {
+          if (!q) return await reply("Please provide a YouTube URL or song name.");
+        
+        const yt = await ytsearch(q);
+        if (yt.results.length < 1) return reply("No results found!");
+        
+        let yts = yt.results[0];  
+        let apiUrl = `https://apis.davidcyriltech.my.id/youtube/mp3?url=${encodeURIComponent(yts.url)}`;
+        
+        let response = await fetch(apiUrl);
+        let data = await response.json();
+        
+        if (data.status !== 200 || !data.success || !data.result.downloadUrl) {
+            return reply("Failed to fetch the audio. Please try again later.");
+            }
+
+        conn.sendMessage(m.chat, {
+            video: { url: data.result.download_url },
+                            mimetype: "video/mp4",
+                            caption: "*♯ `𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚃𝙷𝙰𝚁𝚄𝚂𝙷𝙰 〽️𝙳`*"
+                   }, { quoted: mek });
+
+    } catch (e) {
+        console.error(e);
+        reply(`Error: ${e.message}`);
+    }
+});
+
+cmd({
+    pattern: "videodldocument",
+    react: "📄",
+    desc: "Download yt video.",
+    category: "pakaya",
+    filename: __filename
+}, async (conn, mek, m, { from, prefix, quoted, q, reply }) => {
+      try {
+          if (!q) return await reply("Please provide a YouTube URL or song name.");
+        
+        const yt = await ytsearch(q);
+        if (yt.results.length < 1) return reply("No results found!");
+        
+        let yts = yt.results[0];  
+        let apiUrl = `https://apis.davidcyriltech.my.id/youtube/mp3?url=${encodeURIComponent(yts.url)}`;
+        
+        let response = await fetch(apiUrl);
+        let data = await response.json();
+        
+        if (data.status !== 200 || !data.success || !data.result.downloadUrl) {
+            return reply("Failed to fetch the audio. Please try again later.");
+            }
+
+        conn.sendMessage(m.chat, {
+            document: { url: data.result.download_url },
+            mimetype: "video/mp4",
+            fileName: `${yts.title}.mp4`,
+            caption: "*♯ `𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚃𝙷𝙰𝚁𝚄𝚂𝙷𝙰 〽️𝙳`*",
+         contextInfo: {
+                     externalAdReply: {
+            title: yts.title.length > 25 ? `${yts.title.substring(0, 22)}...` : yts.title,
+            body: "Join our WhatsApp Channel",
+            mediaType: 1,
+            thumbnailUrl: yts.thumbnail.replace('default.jpg', 'hqdefault.jpg'),
+            sourceUrl: 'https://whatsapp.com/channel/0029Vb4eZqo3bbV0lTGjFn2S',
+            mediaUrl: 'https://whatsapp.com/channel/0029Vb4eZqo3bbV0lTGjFn2S',
+            showAdAttribution: true,
+            renderLargerThumbnail: true
+        }
+     }
+   }, { quoted: mek });
 
     } catch (e) {
         console.error(e);
