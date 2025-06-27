@@ -3,28 +3,26 @@
 
 const config = require('../settings')
 const { cmd, commands } = require('../lib/command')
-
+//const {cmd , commands} = require('../command')
+const os = require("os")
+const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
 cmd({
     pattern: "ping",
-    desc: "Check bot's response time.",
+    react: "⚡",
+    alias: ["speed"],
+    desc: "Check bot\'s ping",
     category: "main",
-    react: "📍",
+    use: '.ping',
     filename: __filename
 },
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-   try{
-const nima = require("@whiskeysockets/baileys")
+async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
 var inital = new Date().getTime();
-let ping = await conn.sendMessage(from , { text: '*_Pinging to Cyber Module..._* ❗'  } )
+let ping = await conn.sendMessage(from , { text: '```Pinging To index.js!!!```'  }, { quoted: mek } )
 var final = new Date().getTime();
-await conn.sendMessage(from, { text : '◍○○○○' , edit : ping.key })
-await conn.sendMessage(from, { text : '◍◍○○○' , edit : ping.key })
-await conn.sendMessage(from, { text : '◍◍◍○○' , edit : ping.key })
-await conn.sendMessage(from, { text : '◍◍◍◍○' , edit : ping.key })
-await conn.sendMessage(from, { text : '◍◍◍◍◍' , edit : ping.key })
-return await conn.sendMessage(from, { text : '📍️ *Pong ' + (final - inital) + ' Ms* ' , edit : ping.key })
+return await conn.edit(ping, '*𝗣𝗼𝗻𝗴*\n *' + (final - inital) + ' ms* ' )
 } catch (e) {
-reply('*Error !!*')
-l(e)
+reply(`${e}`)
+console.log(e)
 }
 })
