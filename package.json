@@ -55,6 +55,7 @@
         "ytsearch-venom": "^1.0.0",
         "denethdev-ytmp3":"1.0.2",
         "@vreden/youtube_scraper":"1.2.7",
-        "@xaviabot/fb-downloader":"1.0.14"
+        "@xaviabot/fb-downloader":"1.0.14",
+        "moment":"2.30.1"
     }
 }
