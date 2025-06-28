@@ -74,7 +74,7 @@ cmd({
             headerType: 1,
             viewOnce: true,
             caption: teksnya,
-            image: { url: randomTharuzzImg },
+            image: { url: cover },
             contextInfo: {
                   mentionedJid: ['94740326138@s.whatsapp.net'], // specify mentioned JID(s) if any
                   groupMentions: [],
