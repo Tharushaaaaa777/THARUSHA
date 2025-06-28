@@ -1,8 +1,8 @@
-const moment = require("moment");
+/*const moment = require("moment");
 const { cmd } = require('../lib/command');
 
-
-pattern: "datetime",
+cmd{
+  pattern: "datetime",
   alias: ['date', 'calendar', 'cal', 'time'],
   description: 'Show current date, time and calendar',
   category: 'tools',
@@ -44,3 +44,4 @@ pattern: "datetime",
     }
   }
 };
+*/
