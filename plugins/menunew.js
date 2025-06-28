@@ -21,12 +21,12 @@ const menuimg10 = 'https://i.ibb.co/C3z4xZyW/Tharusha-Md.jpg';
 const tharuzzmenuimages = [menuimg, menuimg1, menuimg2, menuimg3, menuimg4, menuimg5, menuimg6, menuimg7, menuimg8, menuimg9, menuimg10];
 const randomTharuzzImg = tharuzzmenuimages[Math.floor(Math.random() * tharuzzmenuimages.length)];
 
-const pushwish;
+/*const pushwish;
 if (time2 < '06:00:00') pushwish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞';
 else if (time2 < '12:00:00') pushwish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞';
 else if (time2 < '15:00:00') pushwish = 'ɢᴏᴏᴅ ᴀꜰᴛᴇʀɴᴏᴏɴ ☀️';
 else if (time2 < '18:00:00') pushwish = 'ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌄';
-else pushwish = 'ɢᴏᴏᴅ ɴɪɢʜᴛ 🌌';
+else pushwish = 'ɢᴏᴏᴅ ɴɪɢʜᴛ 🌌';*/
 
 
 
@@ -39,7 +39,7 @@ cmd({
 }, async (conn, mek, m, { reply, prefix, pushname }) => {
     try {
 
-        let teksnya = `*${pakaya}${pushwish}${pakaya} ${pushname}*,
+        let teksnya = `*🅷🅴🅻🅻🅾 ${pushname} 𝘸𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ*,
 
 *┏━━━━━━━━━━━━━━━━━━━┓*
 *┃ 👾 ${pakaya}ʙᴏᴛ :${pakaya} ᴛʜᴀʀᴜꜱʜᴀ ᴍᴅ* 
