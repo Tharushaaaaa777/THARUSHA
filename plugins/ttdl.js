@@ -4,6 +4,7 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 const DY_SCRAP = require('@dark-yasiya/scrap');
 const dy_scrap = new DY_SCRAP();
 const pakaya = "`";
+const tharuzz_images = "https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg";
 const tharuzz_footer = "*© ᴘᴏᴡᴇʀᴅ ʙʏ ᴛʜᴀʀᴜꜱʜᴀ ᴍᴅ*";
 const { cmd, commands } = require('../lib/command');
 const os = require('os');
@@ -13,8 +14,8 @@ cmd({
     pattern: "tiktok",
     alias: ["tt", "ttdl"],
     react: "🫧",
-    desc: "Check bot Commands.",
-    category: "main",
+    desc: "Download tik tok video.",
+    category: "download",
     filename: __filename
 }, async (conn, mek, m, { from, q, reply, prefix, pushname }) => {
     try {
@@ -42,8 +43,8 @@ cmd({
 
    let vpsOptions = [
         
-            { title: "ᴡɪᴛʜ ᴡᴀᴛᴇʀᴍᴀʀᴋ 🎫", description: "Get Bot Download Menu", id: `${prefix}downmenu` },
-            { title: "ᴡɪᴛʜᴏᴜᴛ ᴡᴀᴛᴇʀᴍᴀʀᴋ 🎟️", description: "Get Bot Movie Menu", id: `${prefix}moviemenu` },
+            { title: "ᴡɪᴛʜ ᴡᴀᴛᴇʀᴍᴀʀᴋ 🎫", description: "Get Bot Download Menu", id: `${prefix}ttdladdwm ${q}` },
+            { title: "ᴡɪᴛʜᴏᴜᴛ ᴡᴀᴛᴇʀᴍᴀʀᴋ 🎟️", description: "Get Bot Movie Menu", id: `${prefix}ttdlnowm ${q}` },
           ];
 
         let buttonSections = [
@@ -87,10 +88,10 @@ cmd({
                   },
                   externalAdReply: {
                       title: '𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔 〽️𝗗',
-                      body: 'ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ ᴄᴏᴍᴍᴀɴᴅꜱ',
+                      body: 'ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ ᴛɪᴋᴛᴏᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ',
                       mediaType: 1,
                       sourceUrl: "https://github.com/Tharushaaaaa777",
-                      thumbnailUrl: randomTharuzzImg, // This should match the image URL provided above
+                      thumbnailUrl: tharuzz_images, // This should match the image URL provided above
                       renderLargerThumbnail: false,
                       showAdAttribution: true
                   }
@@ -103,10 +104,102 @@ cmd({
     }
 });
 
+cmd({
+    pattern: "ttdladdwm",
+    react: "📥",
+    desc: "download tik tok.",
+    category: "hithtje",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply, prefix, pushname }) => {
+    try {
 
+      if (!q || !isUrl(q)) {
+            return await reply("❌ Please provide a valid TikTok URL!");
+      }
 
+      const response = await dy_scrap.tiktok(q);
+        if(!response?.status) return await reply("❌ Failed to download TikTok video.");
+        const { id, region, title, cover, duration, play, sd, hd, music, play_count, digg_count, comment_count, share_count, download_count, collect_count } = response?.result;
 
+  
 
+        conn.sendMessage(m.chat, {
+            video: { url: sd },
+            caption: `🎥 *${pakaya}ʜᴇʀᴇ ɪꜱ ʏᴏᴜʀ ᴡɪᴛʜ-ᴡᴀᴛᴇʀᴍᴀʀᴋ ᴛɪᴋᴛᴏᴋ ᴠɪᴅᴇᴏ !${pakaya}*\n\n> ${title}`,
+            contextInfo: {
+                  mentionedJid: ['94740326138@s.whatsapp.net'], // specify mentioned JID(s) if any
+                  groupMentions: [],
+                  forwardingScore: 999,
+                  isForwarded: true,
+                  forwardedNewsletterMessageInfo: {
+                      newsletterJid: '@newsletter',
+                      newsletterName: "𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔 〽️𝗗",
+                      serverMessageId: 999
+                  },
+                  externalAdReply: {
+                      title: '𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔 〽️𝗗',
+                      body: 'ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ ᴛɪᴋᴛᴏᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ',
+                      mediaType: 1,
+                      sourceUrl: "https://github.com/Tharushaaaaa777",
+                      thumbnailUrl: tharuzz_images, // This should match the image URL provided above
+                      renderLargerThumbnail: false,
+                      showAdAttribution: true
+                  }
+            }
+        }, { quoted: mek });
 
+    } catch (e) {
+        console.error(e);
+        reply(`Error: ${e.message}`);
+    }
+});
 
+cmd({
+    pattern: "ttdlnowm",
+    react: "📥",
+    desc: "download tik tok.",
+    category: "hithtje",
+    filename: __filename
+}, async (conn, mek, m, { from, q, reply, prefix, pushname }) => {
+    try {
 
+      if (!q || !isUrl(q)) {
+            return await reply("❌ Please provide a valid TikTok URL!");
+      }
+
+      const response = await dy_scrap.tiktok(q);
+        if(!response?.status) return await reply("❌ Failed to download TikTok video.");
+        const { id, region, title, cover, duration, play, sd, hd, music, play_count, digg_count, comment_count, share_count, download_count, collect_count } = response?.result;
+
+  
+
+        conn.sendMessage(m.chat, {
+            video: { url: hd },
+            caption: `🎥 *${pakaya}ʜᴇʀᴇ ɪꜱ ʏᴏᴜʀ ᴡɪᴛʜᴏᴜᴛ-ᴡᴀᴛᴇʀᴍᴀʀᴋ ᴛɪᴋᴛᴏᴋ ᴠɪᴅᴇᴏ !${pakaya}*\n\n> ${title}`,
+            contextInfo: {
+                  mentionedJid: ['94740326138@s.whatsapp.net'], // specify mentioned JID(s) if any
+                  groupMentions: [],
+                  forwardingScore: 999,
+                  isForwarded: true,
+                  forwardedNewsletterMessageInfo: {
+                      newsletterJid: '@newsletter',
+                      newsletterName: "𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔 〽️𝗗",
+                      serverMessageId: 999
+                  },
+                  externalAdReply: {
+                      title: '𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔 〽️𝗗',
+                      body: 'ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ ᴛɪᴋᴛᴏᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ',
+                      mediaType: 1,
+                      sourceUrl: "https://github.com/Tharushaaaaa777",
+                      thumbnailUrl: tharuzz_images, // This should match the image URL provided above
+                      renderLargerThumbnail: false,
+                      showAdAttribution: true
+                  }
+            }
+        }, { quoted: mek });
+
+    } catch (e) {
+        console.error(e);
+        reply(`Error: ${e.message}`);
+    }
+});
