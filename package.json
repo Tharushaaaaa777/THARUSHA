@@ -12,6 +12,7 @@
         "@adiwajshing/keyed-db": "^0.2.4",
         "@whiskeysockets/baileys": "npm:baileys-pro",
         "@dark-yasiya/yt-dl.js": "1.0.5",
+        "@dark-yasiya/scrap":"1.0.1",
         "axios": "^1.6.8",
         "buffer": "latest",
         "cheerio": "^1.0.0-rc.12",
