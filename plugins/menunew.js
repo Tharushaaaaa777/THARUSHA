@@ -156,7 +156,7 @@ cmd({
         commandList[commands[i].category] += `*╭──────────●●►*\n*│ 🌀 ᴄᴏᴍᴍᴀɴᴅ : .${commands[i].pattern}*\n*│ 💬 ᴅᴇꜱᴄʀʏᴘᴛɪᴏɴ :* ${commands[i].desc}\n*╰─────────────────────●●►*\n\n`;
       }
     }
-    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗠𝗢𝗩𝗜𝗘 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 🎬\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.download}\n\n${tharusha_md_footer}`;
+    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗠𝗢𝗩𝗜𝗘 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 🎬\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.movie}\n\n${tharusha_md_footer}`;
     await client.sendMessage(from, { image: { url: tharusha_md_img }, caption }, { quoted: message });
   } catch (error) {
     console.log(error);
@@ -177,7 +177,7 @@ cmd({
         commandList[commands[i].category] += `*╭──────────●●►*\n*│ 🌀 ᴄᴏᴍᴍᴀɴᴅ : .${commands[i].pattern}*\n*│ 💬 ᴅᴇꜱᴄʀʏᴘᴛɪᴏɴ :* ${commands[i].desc}\n*╰─────────────────────●●►*\n\n`;
       }
     }
-    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗖𝗢𝗡𝗩𝗘𝗥𝗧 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 ♻️\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.download}\n\n${tharusha_md_footer}`;
+    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗖𝗢𝗡𝗩𝗘𝗥𝗧 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 ♻️\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.convert}\n\n${tharusha_md_footer}`;
     await client.sendMessage(from, { image: { url: tharusha_md_img }, caption }, { quoted: message });
   } catch (error) {
     console.log(error);
@@ -198,7 +198,7 @@ cmd({
         commandList[commands[i].category] += `*╭──────────●●►*\n*│ 🌀 ᴄᴏᴍᴍᴀɴᴅ : .${commands[i].pattern}*\n*│ 💬 ᴅᴇꜱᴄʀʏᴘᴛɪᴏɴ :* ${commands[i].desc}\n*╰─────────────────────●●►*\n\n`;
       }
     }
-    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗚𝗥𝗢𝗨𝗣 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 👥\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.download}\n\n${tharusha_md_footer}`;
+    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗚𝗥𝗢𝗨𝗣 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 👥\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.group}\n\n${tharusha_md_footer}`;
     await client.sendMessage(from, { image: { url: tharusha_md_img }, caption }, { quoted: message });
   } catch (error) {
     console.log(error);
@@ -219,7 +219,7 @@ cmd({
         commandList[commands[i].category] += `*╭──────────●●►*\n*│ 🌀 ᴄᴏᴍᴍᴀɴᴅ : .${commands[i].pattern}*\n*│ 💬 ᴅᴇꜱᴄʀʏᴘᴛɪᴏɴ :* ${commands[i].desc}\n*╰─────────────────────●●►*\n\n`;
       }
     }
-    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗔𝗜 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 🤖\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.download}\n\n${tharusha_md_footer}`;
+    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗔𝗜 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 🤖\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.ai}\n\n${tharusha_md_footer}`;
     await client.sendMessage(from, { image: { url: tharusha_md_img }, caption }, { quoted: message });
   } catch (error) {
     console.log(error);
@@ -240,7 +240,7 @@ cmd({
         commandList[commands[i].category] += `*╭──────────●●►*\n*│ 🌀 ᴄᴏᴍᴍᴀɴᴅ : .${commands[i].pattern}*\n*│ 💬 ᴅᴇꜱᴄʀʏᴘᴛɪᴏɴ :* ${commands[i].desc}\n*╰─────────────────────●●►*\n\n`;
       }
     }
-    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗦𝗘𝗔𝗥𝗖𝗛 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 🔍\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.download}\n\n${tharusha_md_footer}`;
+    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗦𝗘𝗔𝗥𝗖𝗛 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 🔍\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.search}\n\n${tharusha_md_footer}`;
     await client.sendMessage(from, { image: { url: tharusha_md_img }, caption }, { quoted: message });
   } catch (error) {
     console.log(error);
@@ -261,7 +261,7 @@ cmd({
         commandList[commands[i].category] += `*╭──────────●●►*\n*│ 🌀 ᴄᴏᴍᴍᴀɴᴅ : .${commands[i].pattern}*\n*│ 💬 ᴅᴇꜱᴄʀʏᴘᴛɪᴏɴ :* ${commands[i].desc}\n*╰─────────────────────●●►*\n\n`;
       }
     }
-    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗙𝗨𝗡 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 😂\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.download}\n\n${tharusha_md_footer}`;
+    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗙𝗨𝗡 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 😂\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.fun}\n\n${tharusha_md_footer}`;
     await client.sendMessage(from, { image: { url: tharusha_md_img }, caption }, { quoted: message });
   } catch (error) {
     console.log(error);
@@ -282,7 +282,7 @@ cmd({
         commandList[commands[i].category] += `*╭──────────●●►*\n*│ 🌀 ᴄᴏᴍᴍᴀɴᴅ : .${commands[i].pattern}*\n*│ 💬 ᴅᴇꜱᴄʀʏᴘᴛɪᴏɴ :* ${commands[i].desc}\n*╰─────────────────────●●►*\n\n`;
       }
     }
-    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗕𝗨𝗚 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 💥\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.download}\n\n${tharusha_md_footer}`;
+    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗕𝗨𝗚 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 💥\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.bug}\n\n${tharusha_md_footer}`;
     await client.sendMessage(from, { image: { url: tharusha_md_img }, caption }, { quoted: message });
   } catch (error) {
     console.log(error);
@@ -303,7 +303,7 @@ cmd({
         commandList[commands[i].category] += `*╭──────────●●►*\n*│ 🌀 ᴄᴏᴍᴍᴀɴᴅ : .${commands[i].pattern}*\n*│ 💬 ᴅᴇꜱᴄʀʏᴘᴛɪᴏɴ :* ${commands[i].desc}\n*╰─────────────────────●●►*\n\n`;
       }
     }
-    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗢𝗧𝗛𝗘𝗥 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 🤤\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.download}\n\n${tharusha_md_footer}`;
+    const caption = `𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔-𝗠𝗗 𝗢𝗧𝗛𝗘𝗥 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 🤤\n\n*┏━━━━━━━━━━━━━━━━━━━┓*\n*┃ 📁 ${pakaya}ᴍᴇᴍᴏʀʏ :${pakaya} ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}ᴍʙ / ${Math.round(require('os').totalmem / 1024 / 1024)}ᴍʙ*\n*┃ 🕑 ${pakaya}ʀᴜɴᴛɪᴍᴇ :${pakaya} ${runtime(process.uptime())}*\n*┃ 📍 ${pakaya}ᴠᴇʀᴛɪᴏɴ :${pakaya} 2.0.0 ʙᴇᴛᴀ*\n*┗━━━━━━━━━━━━━━━━━━━┛*\n\n${commandList.other}\n\n${tharusha_md_footer}`;
     await client.sendMessage(from, { image: { url: tharusha_md_img }, caption }, { quoted: message });
   } catch (error) {
     console.log(error);
