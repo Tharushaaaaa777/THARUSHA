@@ -1,7 +1,4 @@
 const { cmd, commands } = require('../lib/command');
-const config = require('../settings');
-const os = require('os');
-var { get_set , input_set } = require('../lib/set_db') ;
 let statusEmoji = "😊"; // ✅ Emoji stored in-memory (default)
 
 
