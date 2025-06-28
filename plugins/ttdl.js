@@ -1,5 +1,5 @@
 const axios = require('axios');
-const config = require('../config');
+const config = require('../settings');
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson, jsonformat} = require('../lib/functions');
 const DY_SCRAP = require('@dark-yasiya/scrap');
 const dy_scrap = new DY_SCRAP();
