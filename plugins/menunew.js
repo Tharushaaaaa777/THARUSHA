@@ -6,19 +6,19 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 const pakaya = "`";
 //const tharusha_md_img = "https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg"
 const tharusha_md_footer = "> © ᴘᴏᴡᴇʀᴅ ʙʏ ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ";
-const menuimg = 'https://i.ibb.co/HLLxrDvv/Tharusha-Md.jpg';
+/*const menuimg = 'https://i.ibb.co/HLLxrDvv/Tharusha-Md.jpg';
 const menuimg1 = 'https://i.ibb.co/ksPNZMkj/Tharusha-Md.jpg';
 const menuimg2 = 'https://i.ibb.co/pjh8V1FH/Tharusha-Md.jpg';
 const menuimg3 = 'https://i.ibb.co/DHLqTQXg/Tharusha-Md.jpg';
 const menuimg4 = 'https://i.ibb.co/r2dzHCTz/Tharusha-Md.jpg';
-const menuimg5 = 'https://i.ibb.co/234RzpD1/Tharusha-Md.jpg';
+*/const menuimg5 = 'https://i.ibb.co/234RzpD1/Tharusha-Md.jpg';
 const menuimg6 = 'https://i.ibb.co/hFwCWPND/Tharusha-Md.jpg';
 const menuimg7 = 'https://i.ibb.co/dJmvFXRz/Tharusha-Md.jpg';
 const menuimg8 = 'https://i.ibb.co/dJcYNj45/Tharusha-Md.jpg';
 const menuimg9 = 'https://i.ibb.co/WNsH5yNF/Tharusha-Md.jpg';
 const menuimg10 = 'https://i.ibb.co/C3z4xZyW/Tharusha-Md.jpg';
 
-const tharuzzmenuimages = [menuimg, menuimg1, menuimg2, menuimg3, menuimg4, menuimg5, menuimg6, menuimg7, menuimg8, menuimg9, menuimg10];
+const tharuzzmenuimages = [/*menuimg, menuimg1, menuimg2, menuimg3, menuimg4, */menuimg5, menuimg6, menuimg7, menuimg8, menuimg9, menuimg10];
 const randomTharuzzImg = tharuzzmenuimages[Math.floor(Math.random() * tharuzzmenuimages.length)];
 
 /*const pushwish;
