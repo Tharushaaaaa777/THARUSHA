@@ -49,7 +49,7 @@ const sections = [{
 
     const listMessage = {
       text: `🔞 *Results for ${query}*`,
-      footer: await getFooter(),
+      footer: tharusha_md_footer,
       title: '',
       buttonText: 'Select a video',
       sections
