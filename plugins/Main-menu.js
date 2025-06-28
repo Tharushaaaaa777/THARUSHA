@@ -9,7 +9,7 @@ const tharusha_md_footer = "> © ᴘᴏᴡᴇʀᴅ ʙʏ ᴛʜᴀʀᴜꜱʜᴀ-�
 
 
 cmd({
-    pattern: "menu",
+    pattern: "menu3",
     react: "📂",
     desc: "Check bot Commands.",
     category: "main",
