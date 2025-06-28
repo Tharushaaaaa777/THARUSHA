@@ -1,14 +1,14 @@
 const { cmd, commands } = require('../lib/command');
-let statusEmoji = "😊"; // ✅ Emoji stored in-memory (default)
 
+let statusEmoji = "😊"; // default emoji
 
 cmd({
   pattern: "setstatus",
   desc: "Set emoji for auto reacting to status messages",
   react: "🌟",
   filename: __filename
-}, async (client, m, { q, reply, isMe }) => {
-  if (!isMe) return reply("❌ Only the bot owner (you) can use this command.");
+}, async (client, m, { q, reply, senderNumber, botNumber }) => {
+  if (senderNumber !== botNumber) return reply("❌ Only the bot owner can use this command.");
   if (!q || q.length > 2) return reply("❗ Send a single emoji.\n\nUsage: .setstatus 😎");
 
   statusEmoji = q.trim();
