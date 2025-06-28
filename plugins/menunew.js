@@ -96,14 +96,24 @@ cmd({
             caption: teksnya,
             image: { url: randomTharuzzImg },
             contextInfo: {
-                mentionedJid: [m.sender], 
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363411607943828@newsletter',
-                    newsletterName: `ᴛʜᴀʀᴜꜱʜᴀ 〽️ᴅ`,
-                    serverMessageId: 143
-                }
+                  mentionedJid: ['94740326138@s.whatsapp.net'], // specify mentioned JID(s) if any
+                  groupMentions: [],
+                  forwardingScore: 999,
+                  isForwarded: true,
+                  forwardedNewsletterMessageInfo: {
+                      newsletterJid: '@newsletter',
+                      newsletterName: "𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔 〽️𝗗",
+                      serverMessageId: 999
+                  },
+                  externalAdReply: {
+                      title: '𝗧𝗛𝗔𝗥𝗨𝗦𝗛𝗔 〽️𝗗',
+                      body: 'ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ ᴄᴏᴍᴍᴀɴᴅꜱ',
+                      mediaType: 1,
+                      sourceUrl: "https://github.com/Tharushaaaaa777",
+                      thumbnailUrl: randomTharuzzImg, // This should match the image URL provided above
+                      renderLargerThumbnail: false,
+                      showAdAttribution: true
+                  }
             }
         }, { quoted: mek });
 
