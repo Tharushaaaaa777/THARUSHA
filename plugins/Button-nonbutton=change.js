@@ -1,5 +1,7 @@
-const config = require('../settings')
-const { cmd, commands } = require('../lib/command')
+const config = require('../settings');
+const { cmd, commands } = require('../lib/command');
+const { get_set , input_set } = require('../lib/set_db');
+
 
 cmd({
     pattern: "mode",
