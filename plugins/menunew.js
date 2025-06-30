@@ -17,10 +17,11 @@ const menuimg7 = 'https://i.ibb.co/dJmvFXRz/Tharusha-Md.jpg';
 const menuimg8 = 'https://i.ibb.co/dJcYNj45/Tharusha-Md.jpg';
 const menuimg9 = 'https://i.ibb.co/WNsH5yNF/Tharusha-Md.jpg';
 const menuimg10 = 'https://i.ibb.co/C3z4xZyW/Tharusha-Md.jpg';
-
-const tharuzzmenuimages = [/*menuimg, menuimg1, menuimg2, menuimg3, menuimg4, */menuimg5, menuimg6, menuimg7, menuimg8, menuimg9, menuimg10];
-const randomTharuzzImg = tharuzzmenuimages[Math.floor(Math.random() * tharuzzmenuimages.length)];
-
+const tharuzzofcjpg = 'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg';
+                let tharuimges = [
+                    'https://i.ibb.co/M5cQsgwj/Tharusha-Md.jpg', 'https://i.ibb.co/234RzpD1/Tharusha-Md.jpg', 'https://i.ibb.co/hFwCWPND/Tharusha-Md.jpg', 'https://i.ibb.co/dJmvFXRz/Tharusha-Md.jpg', 'https://i.ibb.co/dJcYNj45/Tharusha-Md.jpg', 'https://i.ibb.co/WNsH5yNF/Tharusha-Md.jpg', 'https://i.ibb.co/C3z4xZyW/Tharusha-Md.jpg'];
+                let randomimagestharu = tharuimges[Math.floor(Math.random() * tharuimges.length)];
+                
 /*const pushwish;
 if (time2 < '06:00:00') pushwish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞';
 else if (time2 < '12:00:00') pushwish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞';
@@ -94,7 +95,7 @@ cmd({
             headerType: 1,
             viewOnce: true,
             caption: teksnya,
-            image: { url: randomTharuzzImg },
+            image: { url: randomimagestharu },
             contextInfo: {
                   mentionedJid: ['94740326138@s.whatsapp.net'], // specify mentioned JID(s) if any
                   groupMentions: [],
@@ -110,7 +111,7 @@ cmd({
                       body: 'ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ ᴄᴏᴍᴍᴀɴᴅꜱ',
                       mediaType: 1,
                       sourceUrl: "https://github.com/Tharushaaaaa777",
-                      thumbnailUrl: randomTharuzzImg, // This should match the image URL provided above
+                      thumbnailUrl: tharuzzofcjpg, // This should match the image URL provided above
                       renderLargerThumbnail: false,
                       showAdAttribution: true
                   }
