@@ -315,19 +315,19 @@ console.log(e)
 	    var id_db = require('./lib/id_db')    
             mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
              //----------------AUTO STATUS VIEW-------------------------------
-if (!mek.message) return        
-mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
- if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_READ === "true"){
-                let emoji = [
-                    '🩵','💚','🤍'
-                ];
-                let sigma = emoji[Math.floor(Math.random() * emoji.length)];
-                await conn.readMessages([mek.key]);
-                conn.sendMessage(
-                    'status@broadcast',
-                    { react: { text: sigma, key: mek.key } },
-                    { statusJidList: [mek.key.participant] },
-                );
+            if (config.AUTO_STATUS_READ === 'true') {
+            if (mek.key && mek.key.remoteJid === 'status@broadcast') {
+            await conn.readMessages([mek.key])
+            }
+            }
+            if (mek.key && mek.key.remoteJid === 'status@broadcast') return
+            const m = sms(conn, mek)
+	    var smg = m
+            const type = getContentType(mek.message)
+            const content = JSON.stringify(mek.message)
+            const from = mek.key.remoteJid
+            const quoted = type == 'extendedTextMessage' && mek.message.extendedTextMessage.contextInfo != null ? mek.message.extendedTextMessage.contextInfo.quotedMessage || [] : []
+
 
 
 	      
@@ -546,7 +546,7 @@ conn.buttonMessage = async (jid, msgData, quotemek) => {
     const CMD_ID_MAP = []
     msgData.buttons.forEach((button, bttnIndex) => {
 const mainNumber = `${bttnIndex + 1}`;
-result += `\n${mainNumber} | ${button.buttonText.displayText}\n`;
+result += `\n${mainNumber} | | ${button.buttonText.displayText}\n`;
 
 CMD_ID_MAP.push({ cmdId: mainNumber, cmd: button.buttonId });
     });
@@ -927,7 +927,7 @@ if (config.AUTO_RECORDING === 'true') {
         }    
 
 if (config.AUTO_BIO === 'true') {
-        conn.updateProfileStatus(`Hey, future leaders! 💎 SHONU X MD is here to inspire and lead, thanks to Technicall dark devils, Inc. 🚀 ${runtime(process.uptime())} `).catch(_ => _)
+        conn.updateProfileStatus(`𝗛𝗘𝗬 𝘁𝗵𝗮𝗿𝘂𝘀𝗵𝗮-𝗺𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱. 🚀 ${runtime(process.uptime())} `).catch(_ => _)
         }	
 
 if (config.ALWAYS_ONLINE === 'false') {
@@ -950,7 +950,7 @@ if (isAnti && isBotAdmins) {
   if(!isMe){
 if (body.match(`https`)) {
     await conn.sendMessage(from, { delete: mek.key })	  	  
-  reply('*「 ⚠️ 𝑳𝑰𝑵𝑲 𝑫𝑬𝑳𝑬𝑻𝑬𝑫 ⚠️ 」*')
+  reply('*「 ⚠️ 𝘓𝘐𝘕𝘒 𝘋𝘌𝘓𝘌𝘛𝘌 𝘋𝘌𝘛𝘌𝘊𝘛𝘌𝘋 ⚠️ 」*')
 }
 }
 }
